@@ -75,7 +75,79 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
     - targets: ['projectpyramid.eurosafeuk.co.uk:443']  
-    
+
+  - job_name: 'pqapi-prod'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['pqdapi.ssipassessors.com:443']    
+
+  - job_name: 'pqadmin-prod'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['pq.ssipassessors.com:443']  
+
+  - job_name: 'pqui-prod'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['www.ssipassessors.com:443'] 
+
+  - job_name: 'pqapi-test'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['pqdapi-test.ssipassessors.com:443']    
+
+  - job_name: 'pqadmin-test'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['pq-test.ssipassessors.com:443']  
+
+  - job_name: 'pqui-test'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['www-test.ssipassessors.com:443']  
+
+  - job_name: 'pqapi-dev'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['pqdapi-dev.ssipassessors.com:443']    
+
+  - job_name: 'pqadmin-dev'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['pq-dev.ssipassessors.com:443']  
+
+  - job_name: 'pqui-dev'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['www-dev.ssipassessors.com:443']  
+
   - job_name: 'pihole'
     static_configs:
       - targets: ['pihole:9617']        
