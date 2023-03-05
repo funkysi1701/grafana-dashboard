@@ -1,0 +1,49 @@
+version: '3.4'
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.42.0
+    container_name: prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    ports:
+      - 5430:9090
+    networks:
+      - my-network 
+    restart: always
+  
+  grafana:
+    image: grafana/grafana:9.4.3
+    container_name: grafana
+    ports:
+      - 80:3000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  
+    restart: unless-stopped
+    networks:
+      - my-network 
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - grafana:/var/lib/grafana
+
+  pihole:
+    image: ekofr/pihole-exporter:latest
+    container_name: pihole
+    environment:
+      - PIHOLE_API_TOKEN=
+      - PIHOLE_HOSTNAME=
+      - PORT=9617
+    networks:
+      - my-network
+    restart: unless-stopped  
+    ports:
+      - 9617:9617
+volumes:
+  prometheus_data:
+  grafana:
+
+networks:
+  my-network:
+    external: true
+    
