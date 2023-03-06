@@ -82,7 +82,7 @@ scrape_configs:
       insecure_skip_verify: true 
     scrape_interval: 5s
     static_configs:
-    - targets: ['pqdapi.ssipassessors.com:443']    
+    - targets: ['pqapi.ssipassessors.com:443']    
 
   - job_name: 'pqadmin-prod'
     scheme: 'https'
@@ -106,7 +106,7 @@ scrape_configs:
       insecure_skip_verify: true 
     scrape_interval: 5s
     static_configs:
-    - targets: ['pqdapi-test.ssipassessors.com:443']    
+    - targets: ['pqapi-test.ssipassessors.com:443']    
 
   - job_name: 'pqadmin-test'
     scheme: 'https'
@@ -130,7 +130,7 @@ scrape_configs:
       insecure_skip_verify: true 
     scrape_interval: 5s
     static_configs:
-    - targets: ['pqdapi-dev.ssipassessors.com:443']    
+    - targets: ['pqapi-dev.ssipassessors.com:443']    
 
   - job_name: 'pqadmin-dev'
     scheme: 'https'
@@ -151,3 +151,33 @@ scrape_configs:
   - job_name: 'pihole'
     static_configs:
       - targets: ['pihole:9617']        
+
+  - job_name: "website-monitoring-http"
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/targets.yml
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter:9115
+
+  - job_name: "website-monitoring-icmp"
+    metrics_path: /probe
+    params:
+      module: [icmp]
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/targets.yml
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox-exporter:9115      

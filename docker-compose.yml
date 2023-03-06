@@ -39,6 +39,21 @@ services:
     restart: unless-stopped  
     ports:
       - 9617:9617
+
+  blackbox-exporter:
+    image: "prom/blackbox-exporter:latest"
+    container_name: blackbox
+    hostname: "blackbox"
+    restart: always
+    networks:
+      - my-network
+    ports:
+    - 9115:9115
+    volumes:
+    - "./config/blackbox-exporter/blackbox-exporter.yml:/etc/prometheus/blackbox-exporter.yml"
+    command:
+    - "--config.file=/etc/prometheus/blackbox-exporter.yml"
+
 volumes:
   prometheus_data:
   grafana:
