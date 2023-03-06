@@ -28,7 +28,7 @@ services:
       - grafana:/var/lib/grafana
 
   pihole:
-    image: ekofr/pihole-exporter:latest
+    image: ekofr/pihole-exporter:v0.4.0
     container_name: pihole
     environment:
       - PIHOLE_API_TOKEN=
