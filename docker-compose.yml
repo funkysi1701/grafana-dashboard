@@ -25,6 +25,7 @@ services:
       - my-network 
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/etcs:/etc/grafana
       - grafana:/var/lib/grafana
 
   mail:
