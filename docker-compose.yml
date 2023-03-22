@@ -14,7 +14,7 @@ services:
     restart: always
   
   grafana:
-    image: grafana/grafana:9.4.3
+    image: grafana/grafana:9.4.7
     container_name: grafana
     ports:
       - 80:3000
