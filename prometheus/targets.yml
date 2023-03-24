@@ -1,7 +1,9 @@
 - targets:
 
-  - projectpyramid.eurosafeuk.co.uk
-  - projectpyramidapi.eurosafeuk.co.uk
-  - pq.ssipassessors.com
-  - pqapi.ssipassessors.com
-  - www.ssipassessors.com
+  - https://projectpyramid.eurosafeuk.co.uk
+  - https://projectpyramidapi.eurosafeuk.co.uk
+  - https://pq.ssipassessors.com
+  - https://pqapi.ssipassessors.com
+  - https://www.ssipassessors.com
+  - https://www.funkysi1701.com
+  - https://metrics-prod.funkysi1701.com

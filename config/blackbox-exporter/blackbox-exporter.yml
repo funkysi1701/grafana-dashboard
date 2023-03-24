@@ -8,6 +8,10 @@ modules:
       method: GET
       preferred_ip_protocol: "ip4"
       ip_protocol_fallback: false 
+      fail_if_not_ssl: true
+      tls_config: 
+        min_version: TLS12
+        insecure_skip_verify: true
   icmp:
     prober: icmp
     icmp:
