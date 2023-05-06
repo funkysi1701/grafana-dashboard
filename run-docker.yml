@@ -1,0 +1,19 @@
+name: $(BuildDefinitionName)-$(SourceBranchName)-$(date:yyyyMMdd)$(Rev:.r)
+
+pr: none
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - main
+
+pool: docker
+
+steps:
+- script: docker-compose build
+  displayName: 'Docker Compose Build'  
+- script: docker-compose down
+  displayName: 'Docker Compose Down'
+- script: docker-compose up -d
+  displayName: 'Docker Compose Up'
