@@ -50,7 +50,15 @@ services:
     restart: unless-stopped  
     ports:
       - 9617:9617
-
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - ./homarr/configs:/app/data/configs
+      - ./homarr/icons:/app/public/icons
+    ports:
+      - '7575:7575'
   blackbox-exporter:
     image: prom/blackbox-exporter:v0.23.0
     container_name: blackbox
