@@ -60,6 +60,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - '7575:7575'
+  homepage:
+    image: ghcr.io/benphelps/homepage:latest
+    container_name: homepage
+    ports:
+      - 3000:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock      
   blackbox-exporter:
     image: prom/blackbox-exporter:v0.23.0
     container_name: blackbox
