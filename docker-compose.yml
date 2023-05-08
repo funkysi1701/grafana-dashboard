@@ -50,34 +50,6 @@ services:
     restart: unless-stopped  
     ports:
       - 9617:9617
-  homarr:
-    container_name: homarr
-    image: ghcr.io/ajnart/homarr:latest
-    restart: unless-stopped
-    volumes:
-      - ./homarr/configs:/app/data/configs
-      - ./homarr/icons:/app/public/icons
-      - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - '7575:7575'
-  dockerproxy:
-    image: ghcr.io/tecnativa/docker-socket-proxy:latest
-    container_name: dockerproxy
-    environment:
-        - CONTAINERS=1 # Allow access to viewing containers
-        - POST=0 # Disallow any POST operations (effectively read-only)
-    ports:
-        - 2375:2375
-    volumes:
-        - /var/run/docker.sock:/var/run/docker.sock:ro # Mounted as read-only
-    restart: unless-stopped
-  homepage:
-    image: ghcr.io/benphelps/homepage:latest
-    container_name: homepage
-    ports:
-      - 3000:3000
-    volumes:
-      - /homepage:/app/config
   blackbox-exporter:
     image: prom/blackbox-exporter:v0.23.0
     container_name: blackbox
