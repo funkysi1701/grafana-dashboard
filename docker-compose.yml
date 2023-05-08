@@ -63,10 +63,19 @@ services:
     - "./config/blackbox-exporter/blackbox-exporter.yml:/etc/prometheus/blackbox-exporter.yml"
     command:
     - "--config.file=/etc/prometheus/blackbox-exporter.yml"
-
+  yacht:
+    container_name: yacht
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - yacht:/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    image: selfhostedpro/yacht
 volumes:
   prometheus_data:
   grafana:
+  yacht:
 
 networks:
   my-network:
