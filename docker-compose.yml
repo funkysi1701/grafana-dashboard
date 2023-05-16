@@ -51,7 +51,7 @@ services:
     ports:
       - 9617:9617
   blackbox-exporter:
-    image: prom/blackbox-exporter:v0.23.0
+    image: prom/blackbox-exporter:v0.24.0
     container_name: blackbox
     hostname: "blackbox"
     restart: always
