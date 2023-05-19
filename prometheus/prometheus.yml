@@ -8,7 +8,7 @@ global:
 scrape_configs:
   - job_name: windows
     static_configs:
-    - targets: ['server01.local:9182']
+    - targets: ['server01:9182']
     
   - job_name: node
     static_configs:
