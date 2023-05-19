@@ -36,6 +36,7 @@ services:
       - my-network 
     volumes:
       - grafana:/var/lib/grafana
+      - ./provisioning:/etc/grafana/provisioning
 
   mail:
     image: bytemark/smtp
