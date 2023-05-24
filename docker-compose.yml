@@ -3,7 +3,7 @@ version: '3.4'
 services:
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
-    container_name: node_exporter
+    container_name: Monitoring_nodeexporter
     command:
       - '--path.rootfs=/host'
     network_mode: host
@@ -14,7 +14,7 @@ services:
       
   prometheus:
     image: prom/prometheus:v2.44.0
-    container_name: prometheus
+    container_name: Monitoring_prometheus
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
@@ -26,7 +26,7 @@ services:
   
   grafana:
     image: grafana/grafana:9.5.2
-    container_name: grafana
+    container_name: Monitoring_grafana
     ports:
       - 8000:3000
     extra_hosts:
@@ -41,7 +41,7 @@ services:
   mail:
     image: bytemark/smtp
     restart: always
-    container_name: mail
+    container_name: Monitoring_mail
     networks:
       - my-network 
     environment:
@@ -52,7 +52,7 @@ services:
 
   pihole:
     image: ekofr/pihole-exporter:v0.4.0
-    container_name: pihole
+    container_name: Monitoring_pihole
     environment:
       - PIHOLE_API_TOKEN=
       - PIHOLE_HOSTNAME=
@@ -62,9 +62,10 @@ services:
     restart: unless-stopped  
     ports:
       - 9617:9617
+      
   blackbox-exporter:
     image: prom/blackbox-exporter:v0.24.0
-    container_name: blackbox
+    container_name: Monitoring_blackbox
     hostname: "blackbox"
     restart: always
     networks:
@@ -75,8 +76,9 @@ services:
     - "./config/blackbox-exporter/blackbox-exporter.yml:/etc/prometheus/blackbox-exporter.yml"
     command:
     - "--config.file=/etc/prometheus/blackbox-exporter.yml"
+    
   yacht:
-    container_name: yacht
+    container_name: Monitoring_yacht
     restart: unless-stopped
     ports:
       - 80:8000
