@@ -11,9 +11,9 @@ trigger:
 pool: docker
 
 steps:
-- script: docker-compose build
+- script: docker-compose -p "monitoring" build
   displayName: 'Docker Compose Build'  
-- script: docker-compose down
+- script: docker-compose -p "monitoring" down
   displayName: 'Docker Compose Down'
-- script: docker-compose up -d
+- script: docker-compose -p "monitoring" up -d
   displayName: 'Docker Compose Up'
