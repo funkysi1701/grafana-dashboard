@@ -3,7 +3,7 @@ version: '3.4'
 services:
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
-    container_name: Monitoring_nodeexporter
+    container_name: monitoring_nodeexporter
     command:
       - '--path.rootfs=/host'
     network_mode: host
@@ -14,34 +14,33 @@ services:
       
   prometheus:
     image: prom/prometheus:v2.44.0
-    container_name: Monitoring_prometheus
-    volumes:
-      - ./prometheus/:/etc/prometheus/
-      - prometheus_data:/prometheus
+    container_name: monitoring_prometheus
     ports:
       - 5430:9090
     networks:
       - my-network 
-    restart: always
-  
+    restart: always   
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+      
   grafana:
     image: grafana/grafana:9.5.2
-    container_name: Monitoring_grafana
+    container_name: monitoring_grafana
     ports:
       - 8000:3000
     extra_hosts:
-      - "host.docker.internal:host-gateway"  
-    restart: unless-stopped
+      - "host.docker.internal:host-gateway"   
     networks:
       - my-network 
+    restart: unless-stopped
     volumes:
       - grafana:/var/lib/grafana
       - ./provisioning:/etc/grafana/provisioning
 
   mail:
     image: bytemark/smtp
-    restart: always
-    container_name: Monitoring_mail
+    container_name: monitoring_mail
     networks:
       - my-network 
     environment:
@@ -49,10 +48,11 @@ services:
       RELAY_PORT: 587
       RELAY_USERNAME: 
       RELAY_PASSWORD: 
+    restart: always 
 
   pihole:
     image: ekofr/pihole-exporter:v0.4.0
-    container_name: Monitoring_pihole
+    container_name: monitoring_pihole
     environment:
       - PIHOLE_API_TOKEN=
       - PIHOLE_HOSTNAME=
@@ -65,29 +65,30 @@ services:
       
   blackbox-exporter:
     image: prom/blackbox-exporter:v0.24.0
-    container_name: Monitoring_blackbox
+    container_name: monitoring_blackbox
     hostname: "blackbox"
-    restart: always
     networks:
       - my-network
     ports:
     - 9115:9115
+    restart: always
     volumes:
     - "./config/blackbox-exporter/blackbox-exporter.yml:/etc/prometheus/blackbox-exporter.yml"
     command:
     - "--config.file=/etc/prometheus/blackbox-exporter.yml"
     
   yacht:
-    container_name: Monitoring_yacht
-    restart: unless-stopped
+    image: selfhostedpro/yacht
+    container_name: monitoring_yacht
     ports:
       - 80:8000
     networks:
-      - my-network       
+      - my-network  
+    restart: unless-stopped
     volumes:
       - yacht:/config
       - /var/run/docker.sock:/var/run/docker.sock
-    image: selfhostedpro/yacht
+    
 volumes:
   prometheus_data:
   grafana:
