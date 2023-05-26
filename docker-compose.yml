@@ -37,6 +37,7 @@ services:
     volumes:
       - grafana:/var/lib/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
 
   mail:
     image: bytemark/smtp
