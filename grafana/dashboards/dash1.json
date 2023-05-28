@@ -136,7 +136,7 @@
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
+      "title": "server04 disk space",
       "type": "timeseries"
     },
     {
@@ -255,7 +255,7 @@
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
+      "title": "server01 disk space",
       "type": "timeseries"
     }
   ],
