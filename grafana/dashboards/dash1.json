@@ -18,14 +18,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "c0yrbsbVz"
       },
       "fieldConfig": {
         "defaults": {
@@ -102,10 +101,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "c0yrbsbVz"
           },
           "editorMode": "builder",
-          "expr": "windows_logical_disk_free_bytes",
+          "expr": "node_filesystem_free_bytes",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -129,6 +128,7 @@
   "timepicker": {},
   "timezone": "",
   "title": "disk space",
+  "uid": "cb8d19af-91da-43e1-bf75-bd1eb251defe",
   "version": 1,
   "weekStart": ""
 }
