@@ -11,9 +11,28 @@ trigger:
 pool: docker
 
 steps:
-- script: docker-compose -p "monitoring" build --build-arg PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN) --build-arg PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME) --build-arg RELAY_USERNAME=$(RELAY_USERNAME) --build-arg RELAY_PASSWORD=$(RELAY_PASSWORD)
-  displayName: 'Docker Compose Down'
-- script: docker-compose -p "monitoring" down
-  displayName: 'Docker Compose Down'
-- script: docker-compose -p "monitoring" up -d
-  displayName: 'Docker Compose Up'
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: 'docker-compose.yml'
+    dockerComposeFileArgs: 'PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)'
+    projectName: 'monitoring'
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'build'
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: 'docker-compose.yml'
+    dockerComposeFileArgs: 'PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)'
+    projectName: 'monitoring'
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'down'
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: 'docker-compose.yml'
+    dockerComposeFileArgs: 'PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)'
+    projectName: 'monitoring'
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'up'
+    arguments: '-d'
