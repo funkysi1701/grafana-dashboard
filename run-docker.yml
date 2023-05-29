@@ -15,7 +15,9 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: 'docker-compose.yml'
-    dockerComposeFileArgs: 'PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)'
+    dockerComposeFileArgs: |
+      PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)
+      PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME)
     projectName: 'monitoring'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'build'
@@ -23,7 +25,9 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: 'docker-compose.yml'
-    dockerComposeFileArgs: 'PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)'
+    dockerComposeFileArgs: |
+      PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)
+      PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME)
     projectName: 'monitoring'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'down'
@@ -31,7 +35,9 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: 'docker-compose.yml'
-    dockerComposeFileArgs: 'PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)'
+    dockerComposeFileArgs: |
+      PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)
+      PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME)
     projectName: 'monitoring'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up'
