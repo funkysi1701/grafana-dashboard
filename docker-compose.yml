@@ -47,16 +47,16 @@ services:
     environment:
       RELAY_HOST: in-v3.mailjet.com
       RELAY_PORT: 587
-      RELAY_USERNAME: 
-      RELAY_PASSWORD: 
+      RELAY_USERNAME: ${RELAY_USERNAME}
+      RELAY_PASSWORD: ${RELAY_PASSWORD}
     restart: always 
 
   pihole:
     image: ekofr/pihole-exporter:v0.4.0
     container_name: monitoring_pihole
     environment:
-      - PIHOLE_API_TOKEN=
-      - PIHOLE_HOSTNAME=
+      - PIHOLE_API_TOKEN=${PIHOLE_API_TOKEN}
+      - PIHOLE_HOSTNAME=${PIHOLE_HOSTNAME}
       - PORT=9617
     networks:
       - my-network
