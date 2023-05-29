@@ -55,8 +55,8 @@ services:
     image: ekofr/pihole-exporter:v0.4.0
     container_name: monitoring_pihole
     environment:
-      - PIHOLE_API_TOKEN=${PIHOLE_API_TOKEN}
-      - PIHOLE_HOSTNAME=${PIHOLE_HOSTNAME}
+      - PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)
+      - PIHOLE_HOSTNAME=$PIHOLE_HOSTNAME
       - PORT=9617
     networks:
       - my-network
