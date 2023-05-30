@@ -5,7 +5,7 @@
         "builtIn": 1,
         "datasource": {
           "type": "datasource",
-          "uid": "grafana"
+          "uid": "-- Grafana --"
         },
         "enable": true,
         "hide": true,
@@ -27,8 +27,8 @@
     {
       "collapsed": false,
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "gridPos": {
         "h": 1,
@@ -41,8 +41,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "refId": "A"
         }
@@ -52,8 +52,8 @@
     },
     {
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -121,8 +121,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_status",
           "format": "time_series",
@@ -137,8 +137,8 @@
     },
     {
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -200,8 +200,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_domains_being_blocked",
           "format": "time_series",
@@ -215,8 +215,8 @@
     },
     {
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -278,8 +278,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_unique_domains",
           "format": "time_series",
@@ -299,8 +299,8 @@
         "threshold": 0
       },
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fontSize": "80%",
       "format": "short",
@@ -325,8 +325,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_top_queries",
           "format": "time_series",
@@ -348,8 +348,8 @@
         "threshold": 0
       },
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fontSize": "80%",
       "format": "short",
@@ -375,8 +375,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_reply",
           "format": "time_series",
@@ -387,7 +387,7 @@
       ],
       "title": "Replies by type",
       "transparent": true,
-      "type": "grafana-piechart-panel",
+      "type": "piechart",
       "valueName": "current"
     },
     {
@@ -398,8 +398,8 @@
         "threshold": 0
       },
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fontSize": "80%",
       "format": "short",
@@ -423,8 +423,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_top_ads",
           "format": "time_series",
@@ -435,7 +435,7 @@
       ],
       "title": "Top ads by domain",
       "transparent": true,
-      "type": "grafana-piechart-panel",
+      "type": "piechart",
       "valueName": "current"
     },
     {
@@ -446,8 +446,8 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -487,8 +487,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_dns_queries_all_types",
           "format": "time_series",
@@ -530,8 +530,8 @@
     },
     {
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fieldConfig": {
         "defaults": {
@@ -590,8 +590,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_ads_percentage_today",
           "format": "time_series",
@@ -612,8 +612,8 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -654,8 +654,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_ads_blocked_today",
           "format": "time_series",
@@ -701,8 +701,8 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -742,8 +742,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_queries_cached",
           "format": "time_series",
@@ -753,8 +753,8 @@
         },
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_queries_forwarded",
           "format": "time_series",
@@ -800,8 +800,8 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -841,8 +841,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_querytypes",
           "format": "time_series",
@@ -852,8 +852,8 @@
         },
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "",
           "format": "time_series",
@@ -900,8 +900,8 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -941,8 +941,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_ads_percentage_today",
           "format": "time_series",
@@ -985,8 +985,8 @@
     {
       "columns": [],
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fontSize": "100%",
       "gridPos": {
@@ -1025,8 +1025,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_top_queries",
           "format": "time_series",
@@ -1045,8 +1045,8 @@
     {
       "columns": [],
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fontSize": "100%",
       "gridPos": {
@@ -1089,8 +1089,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_top_ads",
           "format": "time_series",
@@ -1110,8 +1110,8 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -1151,8 +1151,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_forward_destinations",
           "format": "time_series",
@@ -1201,8 +1201,8 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -1242,8 +1242,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
           "expr": "pihole_unique_clients",
           "format": "time_series",
