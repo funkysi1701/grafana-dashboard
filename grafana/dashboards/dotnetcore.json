@@ -512,7 +512,7 @@
       }
     }
   ],
-  "refresh": "",
+  "refresh": "5m",
   "revision": 1,
   "schemaVersion": 38,
   "style": "dark",
@@ -590,7 +590,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
