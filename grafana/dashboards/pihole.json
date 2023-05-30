@@ -311,17 +311,17 @@
         "y": 1
       },
       "id": 70,
-      "legend": {
-        "header": "",
-        "show": false,
-        "values": true
-      },
-      "legendType": "Under graph",
-      "links": [],
-      "maxDataPoints": 3,
-      "nullPointMode": "connected",
-      "pieType": "donut",
-      "strokeWidth": 1,
+        "legend": {
+          "header": "",
+          "show": false,
+          "values": true
+        },
+        "legendType": "Under graph",
+        "links": [],
+        "maxDataPoints": 3,
+        "nullPointMode": "connected",
+        "pieType": "donut",
+        "strokeWidth": 1,
       "targets": [
         {
           "datasource": {
@@ -337,7 +337,7 @@
       ],
       "title": "Top queries by domain",
       "transparent": true,
-      "type": "grafana-piechart-panel",
+      "type": "piechart",
       "valueName": "current"
     },
     {
