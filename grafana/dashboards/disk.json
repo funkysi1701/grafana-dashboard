@@ -230,16 +230,16 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
-                "value": 160000000
+                "color": "#EAB839",
+                "value": 86400
               },
               {
-                "color": "#EAB839",
-                "value": 170000000
+                "color": "green",
+                "value": 604800
               }
             ]
           },
@@ -299,16 +299,16 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
-                "value": 160000000
+                "color": "#EAB839",
+                "value": 86400
               },
               {
-                "color": "#EAB839",
-                "value": 170000000
+                "color": "green",
+                "value": 604800
               }
             ]
           },
