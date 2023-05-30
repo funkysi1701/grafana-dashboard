@@ -799,9 +799,7 @@
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
-    "prometheus-net",
     "net",
-    "prometheus",
     ".net",
     ".net core"
   ],
