@@ -7,7 +7,7 @@ datasources:
     url: http://server04.local:5430
 
   - name: InfluxDB
-    type: InfluxDB
+    type: influxdb
     access: proxy
     url: http://server04.local:8086  
     user: admin
