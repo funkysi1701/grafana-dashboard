@@ -120,6 +120,7 @@ volumes:
   prometheus_data:
   grafana:
   yacht:
+  influxdb_data:
 
 networks:
   my-network:
