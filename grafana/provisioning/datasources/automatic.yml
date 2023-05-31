@@ -13,5 +13,6 @@ datasources:
     user: admin
     jsonData:
       dbName: influx
+      httpMode: GET
     secureJsonData:
       password: admin  
