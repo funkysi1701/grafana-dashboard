@@ -8,6 +8,10 @@ datasources:
 
   - name: InfluxDB
     type: InfluxDB
+    access: proxy
     url: http://server04.local:8086  
     user: admin
-    database: influx
+    jsonData:
+      dbName: influx
+    secureJsonData:
+      password: admin  
