@@ -3116,7 +3116,7 @@
         }
       ],
       "title": "Data File Size by Database",
-      "type": "grafana-piechart-panel",
+      "type": "piechart",
       "valueName": "current"
     },
     {
@@ -3212,7 +3212,7 @@
         }
       ],
       "title": "Log File Size by Database",
-      "type": "grafana-piechart-panel",
+      "type": "piechart",
       "valueName": "current"
     },
     {
