@@ -3,6 +3,16 @@ apiVersion: 1
 datasources:
   - name: Prometheus
     type: prometheus
-    # Access mode - proxy (server in the UI) or direct (browser in the UI).
     access: proxy
     url: http://server04.local:5430
+
+  - name: InfluxDB
+    type: influxdb
+    access: proxy
+    url: http://server04.local:8086  
+    user: admin
+    jsonData:
+      dbName: influx
+      httpMode: GET
+    secureJsonData:
+      password: admin  
