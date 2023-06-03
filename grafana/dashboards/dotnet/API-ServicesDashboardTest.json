@@ -668,7 +668,7 @@
           "exemplar": false,
           "expr": "topk(10, (sum by(service, controller, action) (rate(http_request_duration_seconds_count{namespace=~\"$namespace\"}[$__range]))))",
           "instant": true,
-          "legendFormat": "{{service}} - {{controller}} - {{action}}",
+          "legendFormat": "{{controller}} - {{action}}",
           "range": false,
           "refId": "A"
         }
@@ -736,7 +736,7 @@
           "exemplar": false,
           "expr": "topk(10, (sum by(service, controller, action) (increase(http_requests_received_total{namespace=~\"$namespace\"}[$__range]))))",
           "instant": true,
-          "legendFormat": "{{service}} - {{controller}} - {{action}}",
+          "legendFormat": "{{controller}} - {{action}}",
           "range": false,
           "refId": "A"
         }
