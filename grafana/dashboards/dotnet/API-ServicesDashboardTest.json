@@ -600,7 +600,7 @@
           },
           "editorMode": "code",
           "expr": "sum by(service, controller, action) (irate(http_requests_received_total{namespace=~\"$namespace\"}[1m]) * 60)",
-          "legendFormat": "{{service}} - {{controller}} - {{action}}",
+          "legendFormat": "{{controller}} - {{action}}",
           "range": true,
           "refId": "A"
         }
