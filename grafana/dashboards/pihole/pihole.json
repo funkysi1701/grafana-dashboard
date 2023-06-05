@@ -311,17 +311,17 @@
         "y": 1
       },
       "id": 70,
-        "legend": {
-          "header": "",
-          "show": false,
-          "values": true
-        },
-        "legendType": "Under graph",
-        "links": [],
-        "maxDataPoints": 3,
-        "nullPointMode": "connected",
-        "pieType": "donut",
-        "strokeWidth": 1,
+      "legend": {
+        "header": "",
+        "show": false,
+        "values": true
+      },
+      "legendType": "Under graph",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pieType": "donut",
+      "strokeWidth": 1,
       "targets": [
         {
           "datasource": {
@@ -1283,12 +1283,79 @@
       "yaxis": {
         "align": false
       }
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 23
+      },
+      "id": 93,
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "pihole_top_sources",
+          "format": "time_series",
+          "legendFormat": "{{source}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Clients",
+      "type": "piechart"
     }
   ],
   "refresh": "5m",
   "schemaVersion": 38,
   "style": "dark",
-  "tags": ["pihole"],
+  "tags": [
+    "pihole"
+  ],
   "templating": {
     "list": []
   },
