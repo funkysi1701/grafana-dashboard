@@ -150,9 +150,9 @@
               "options": {
                 "mode": "exclude",
                 "names": [
-                  "{__name__=\"node_filesystem_free_bytes\", device=\"/dev/mapper/ubuntu--vg-ubuntu--lv\", fstype=\"ext4\", instance=\"server04.local:9100\", job=\"node\", mountpoint=\"/\"}",
-                  "{__name__=\"windows_logical_disk_free_bytes\", instance=\"server01:9182\", job=\"windows\", volume=\"D:\"}",
-                  "{__name__=\"windows_logical_disk_free_bytes\", instance=\"server01:9182\", job=\"windows\", volume=\"C:\"}"
+                  "D:",
+                  "C:",
+                  "/"
                 ],
                 "prefix": "All except:",
                 "readOnly": true
@@ -198,7 +198,7 @@
           },
           "editorMode": "builder",
           "expr": "windows_logical_disk_free_bytes",
-          "legendFormat": "__auto",
+          "legendFormat": "{{volume}}",
           "range": true,
           "refId": "A"
         },
@@ -210,7 +210,7 @@
           "editorMode": "code",
           "expr": "node_filesystem_free_bytes",
           "hide": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{mountpoint}}",
           "range": true,
           "refId": "B"
         }
@@ -634,7 +634,7 @@
           },
           "editorMode": "builder",
           "expr": "windows_os_physical_memory_free_bytes",
-          "legendFormat": "__auto",
+          "legendFormat": "{{job}}",
           "range": true,
           "refId": "A"
         },
@@ -646,7 +646,7 @@
           "editorMode": "builder",
           "expr": "node_memory_MemFree_bytes",
           "hide": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{job}}",
           "range": true,
           "refId": "B"
         }
