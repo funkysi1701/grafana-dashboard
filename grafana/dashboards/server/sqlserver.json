@@ -8859,9 +8859,9 @@
       {
         "allFormat": "glob",
         "current": {
-          "selected": false,
-          "text": "b6557f5e9109",
-          "value": "b6557f5e9109"
+          "selected": true,
+          "text": "5de97b756da3",
+          "value": "5de97b756da3"
         },
         "datasource": {
           "type": "influxdb",
