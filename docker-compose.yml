@@ -82,7 +82,7 @@ services:
     image: selfhostedpro/yacht
     container_name: monitoring_yacht
     ports:
-      - 8082:8000
+      - 8085:8000
     networks:
       - my-network  
     restart: unless-stopped
