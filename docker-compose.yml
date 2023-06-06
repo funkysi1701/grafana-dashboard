@@ -114,45 +114,13 @@ services:
     ports:
       - '8086:8086'
     volumes:
-      - influxdb_data:/var/lib/influxdb
+      - influxdb_data:/var/lib/influxdb   
 
-  nginx:
-    container_name: monitoring_nginx
-    image: nginxproxy/nginx-proxy
-    restart: unless-stopped
-    ports:
-        - 80:80
-        - 443:443
-    volumes:
-        - /var/run/docker.sock:/tmp/docker.sock:ro
-        - /var/docker/nginx/html:/usr/share/nginx/html
-        - /var/docker/nginx/certs:/etc/nginx/certs
-        - /var/docker/nginx/vhost:/etc/nginx/vhost.d
-    logging:
-        options:
-            max-size: "10m"
-            max-file: "3"
-
-  letsencrypt-companion:
-    container_name: monitoring_letsencryptcompanion
-    image: jrcs/letsencrypt-nginx-proxy-companion
-    restart: unless-stopped
-    volumes_from:
-        - nginx
-    volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        - /var/docker/nginx/acme:/etc/acme.sh
-    environment:
-        DEFAULT_EMAIL: funkysi1701@gmail.com
-
-  hello-world:
-    container_name: monitoring_helloworld
-    image: kornkitti/express-hello-world
-    expose:
-        - "8080"
-    environment:
-        VIRTUAL_HOST: helloworld.funkysi1701.com
-        LETSENCRYPT_HOST: helloworld.funkysi1701.com       
+  letsencrypt:
+    container_name: monitoring_letsencrypt
+    build:
+      context: .
+      dockerfile: ProjectPyramid.API/Dockerfile
 
 volumes:
   prometheus_data:
