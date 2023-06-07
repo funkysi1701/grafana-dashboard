@@ -124,7 +124,7 @@ services:
     - /etc/letsencrypt:/etc/letsencrypt
     - /etc/dnsrobocert:/etc/dnsrobocert
     restart: always
-    
+
   nginx:
     container_name: monitoring_nginx
     image: nginxproxy/nginx-proxy
@@ -135,7 +135,7 @@ services:
     volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
-        - /var/docker/nginx/certs:/etc/nginx/certs
+        - /etc/letsencrypt/live:/etc/nginx/certs
         - /var/docker/nginx/vhost:/etc/nginx/vhost.d
     logging:
         options:
