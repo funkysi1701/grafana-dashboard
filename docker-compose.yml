@@ -116,11 +116,13 @@ services:
     volumes:
       - influxdb_data:/var/lib/influxdb   
 
-  letsencrypt:
-    container_name: monitoring_letsencrypt
-    build:
-      context: .
-      dockerfile: letsencrypt/Dockerfile
+  dnsrobocert:
+    image: adferrand/dnsrobocert
+    container_name: monitoring_dnsrobocert
+    volumes:
+    - /etc/letsencrypt:/etc/letsencrypt
+    - /etc/dnsrobocert:/etc/dnsrobocert
+    restart: always
 
 volumes:
   prometheus_data:
