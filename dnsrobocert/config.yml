@@ -1,0 +1,14 @@
+draft: true
+acme:
+  email_account: funkysi1701@gmail.com
+  staging: true
+profiles:
+- name: profile
+  provider: cloudflare
+  provider_options:
+    auth_username: funkysi1701@gmail.com
+    auth_token: -V8a5xMr5ELfXXoZtjtUFMoj1JPyWCsRW-oy-0-a
+certificates:
+- domains:
+  - helloworld.funkysi1701.com
+  profile: profile

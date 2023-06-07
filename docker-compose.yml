@@ -120,6 +120,7 @@ services:
     image: adferrand/dnsrobocert
     container_name: monitoring_dnsrobocert
     volumes:
+    - ./dnsrobocert/config.yml:/etc/dnsrobocert/config.yml
     - /etc/letsencrypt:/etc/letsencrypt
     - /etc/dnsrobocert:/etc/dnsrobocert
     restart: always
