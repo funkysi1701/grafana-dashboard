@@ -135,8 +135,7 @@ services:
     volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
-        - /var/docker/nginx/certs:/etc/nginx/certs
-        - /etc/letsencrypt/live/helloworld2.funkysi1701.com:/etc/nginx/certs/helloworld2.funkysi1701.com
+        - /etc/letsencrypt/live/helloworld2.funkysi1701.com:/etc/nginx/certs
         - /var/docker/nginx/vhost:/etc/nginx/vhost.d
     logging:
         options:
