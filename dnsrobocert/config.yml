@@ -10,5 +10,5 @@ profiles:
     auth_token: -V8a5xMr5ELfXXoZtjtUFMoj1JPyWCsRW-oy-0-a
 certificates:
 - domains:
-  - helloworld.funkysi1701.com
+  - helloworld2.funkysi1701.com
   profile: profile
