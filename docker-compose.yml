@@ -125,6 +125,15 @@ services:
     - /etc/dnsrobocert:/etc/dnsrobocert
     restart: always
 
+  hello-world:
+    container_name: monitoring_helloworld
+    image: kornkitti/express-hello-world
+    expose:
+        - "8080"
+    environment:
+        VIRTUAL_HOST: helloworld2.funkysi1701.com
+        LETSENCRYPT_HOST: helloworld2.funkysi1701.com     
+
 volumes:
   prometheus_data:
   grafana:
