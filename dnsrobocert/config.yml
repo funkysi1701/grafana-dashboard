@@ -8,6 +8,7 @@ profiles:
   provider_options:
     auth_username: funkysi1701@gmail.com
     auth_token: -V8a5xMr5ELfXXoZtjtUFMoj1JPyWCsRW-oy-0-a
+    zoneid: 7f7ed64b3c12075d64b61d0232399026
 certificates:
 - domains:
   - helloworld2.funkysi1701.com
