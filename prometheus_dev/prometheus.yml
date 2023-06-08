@@ -6,7 +6,11 @@ global:
       monitor: 'my-project'
 
 scrape_configs:
-      
+  - job_name: 'prometheus'
+    scrape_interval: 15s
+    static_configs:
+    - targets: ['prometheus-dev:9090']   
+
   - job_name: 'pyramidapi-dev'
     scheme: 'https'
     tls_config:
