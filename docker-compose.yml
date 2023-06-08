@@ -93,7 +93,9 @@ services:
 
   dnsrobocert:
     image: adferrand/dnsrobocert
-    container_name: monitoring_dnsrobocert    
+    container_name: monitoring_dnsrobocert
+    environment:
+      - auth_token 
     volumes:
     - ./dnsrobocert/config.yml:/etc/dnsrobocert/config.yml
     - /etc/letsencrypt:/etc/letsencrypt
