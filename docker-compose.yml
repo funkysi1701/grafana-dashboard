@@ -67,7 +67,7 @@ services:
     
   telegraf:
     image: telegraf
-    container_name: monitoring_telegraf   
+    container_name: monitoring_telegraf
     restart: always
     volumes:
     - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
