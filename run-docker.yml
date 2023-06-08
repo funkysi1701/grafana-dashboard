@@ -22,6 +22,7 @@ steps:
       PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME)
       RELAY_USERNAME=$(RELAY_USERNAME)
       RELAY_PASSWORD=$(RELAY_PASSWORD)
+      auth_token=$(auth_token)
     projectName: 'monitoring'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'build'
@@ -34,6 +35,7 @@ steps:
       PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME)
       RELAY_USERNAME=$(RELAY_USERNAME)
       RELAY_PASSWORD=$(RELAY_PASSWORD)
+      auth_token=$(auth_token)
     projectName: 'monitoring'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'down'
@@ -46,6 +48,7 @@ steps:
       PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME)
       RELAY_USERNAME=$(RELAY_USERNAME)
       RELAY_PASSWORD=$(RELAY_PASSWORD)
+      auth_token=$(auth_token)
     projectName: 'monitoring'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up'
