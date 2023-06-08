@@ -503,8 +503,8 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum by(code, host, controller, action) (irate(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\",namespace=~\"$namespace\"}[$__range]) * 60)",
-          "legendFormat": "{{code}} - {{host}} - {{controller}} - {{action}}",
+          "expr": "sum by(code, controller, action) (irate(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\",namespace=~\"$namespace\"}[$__range]) * 60)",
+          "legendFormat": "{{code}} - {{controller}} - {{action}}",
           "range": true,
           "refId": "A"
         }
@@ -599,8 +599,8 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum by(host, controller, action) (irate(http_requests_received_total{namespace=~\"$namespace\"}[1m]) * 60)",
-          "legendFormat": "{{host}} {{controller}} - {{action}}",
+          "expr": "sum by(controller, action) (irate(http_requests_received_total{namespace=~\"$namespace\"}[1m]) * 60)",
+          "legendFormat": "{{controller}} - {{action}}",
           "range": true,
           "refId": "A"
         }
@@ -666,9 +666,9 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(host, controller, action) (rate(http_request_duration_seconds_count{namespace=~\"$namespace\"}[$__range]))))",
+          "expr": "topk(10, (sum by(controller, action) (rate(http_request_duration_seconds_count{namespace=~\"$namespace\"}[$__range]))))",
           "instant": true,
-          "legendFormat": "{{host}} {{controller}} - {{action}}",
+          "legendFormat": "{{controller}} - {{action}}",
           "range": false,
           "refId": "A"
         }
@@ -734,9 +734,9 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(host, controller, action) (increase(http_requests_received_total{namespace=~\"$namespace\"}[$__range]))))",
+          "expr": "topk(10, (sum by(controller, action) (increase(http_requests_received_total{namespace=~\"$namespace\"}[$__range]))))",
           "instant": true,
-          "legendFormat": "{{host}} {{controller}} - {{action}}",
+          "legendFormat": "{{controller}} - {{action}}",
           "range": false,
           "refId": "A"
         }
