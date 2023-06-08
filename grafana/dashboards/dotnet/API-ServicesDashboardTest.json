@@ -30,7 +30,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -81,7 +81,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -98,7 +98,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -149,7 +149,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -166,7 +166,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -215,7 +215,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "sum(round(increase(http_requests_received_total{code=\"404\", namespace=~\"$namespace\"}[$__range])))",
@@ -230,7 +230,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -278,7 +278,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "sum(round(increase(http_requests_received_total{code=\"405\", namespace=~\"$namespace\"}[$__range])))",
@@ -293,7 +293,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -341,7 +341,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "sum(round(increase(http_requests_received_total{code=\"409\", namespace=~\"$namespace\"}[$__range])))",
@@ -356,7 +356,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -404,7 +404,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "sum(round(increase(http_requests_received_total{code=\"500\", namespace=~\"$namespace\"}[$__range])))",
@@ -419,7 +419,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -500,7 +500,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "sum by(code, host, controller, action) (irate(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\",namespace=~\"$namespace\"}[$__range]) * 60)",
@@ -515,7 +515,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -596,7 +596,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "sum by(host, controller, action) (irate(http_requests_received_total{namespace=~\"$namespace\"}[1m]) * 60)",
@@ -611,7 +611,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -662,7 +662,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -679,7 +679,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -730,7 +730,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -747,7 +747,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -809,7 +809,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "exemplar": false,
