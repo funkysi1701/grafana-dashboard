@@ -12,17 +12,29 @@ services:
     volumes:
       - '/:/host:ro,rslave'
       
-  prometheus:
+  prometheus-prod:
     image: prom/prometheus:v2.44.0
-    container_name: monitoring_prometheus
+    container_name: monitoring_prometheus_prod
     ports:
       - 5430:9090
     networks:
       - my-network 
     restart: always   
     volumes:
-      - ./prometheus/:/etc/prometheus/
-      - prometheus_data:/prometheus
+      - ./prometheus_prod/:/etc/prometheus/
+      - prometheus_data_prod:/prometheus
+
+  prometheus-dev:
+    image: prom/prometheus:v2.44.0
+    container_name: monitoring_prometheus_dev
+    ports:
+      - 5431:9090
+    networks:
+      - my-network 
+    restart: always   
+    volumes:
+      - ./prometheus_dev/:/etc/prometheus/
+      - prometheus_data_dev:/prometheus      
       
   grafana:
     image: grafana/grafana:9.5.3

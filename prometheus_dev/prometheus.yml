@@ -1,0 +1,16 @@
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # By default, scrape targets every 15 seconds.
+
+  external_labels:
+      monitor: 'my-project'
+
+scrape_configs:
+      
+  - job_name: 'pyramidapi-dev'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 30s
+    static_configs:
+    - targets: ['projectpyramidapi-dev.funkysi1701.com:443']     
