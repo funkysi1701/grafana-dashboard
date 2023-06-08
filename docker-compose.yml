@@ -164,7 +164,8 @@ services:
         LETSENCRYPT_HOST: helloworld2.funkysi1701.com     
 
 volumes:
-  prometheus_data:
+  prometheus_data_dev:
+  prometheus_data_prod:
   grafana:
   yacht:
   influxdb_data:
