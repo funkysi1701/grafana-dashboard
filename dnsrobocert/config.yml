@@ -6,10 +6,11 @@ profiles:
 - name: profile
   provider: cloudflare
   provider_options:
-    auth_token: au5sL4P_RDSXQ3oJcfW5VlLqxxgmTw_Lw4cYF9BR
+    auth_token: ${auth_token}
     zoneid: 7f7ed64b3c12075d64b61d0232399026
 certificates:
 - domains:
-  - helloworld2.funkysi1701.com
-  - pig.funkysi1701.com
+  - helloworld.funkysi1701.com
+  - grafana.funkysi1701.com
+  - yacht.funkysi1701.com
   profile: profile
