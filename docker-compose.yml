@@ -17,8 +17,6 @@ services:
     container_name: monitoring_prometheus_prod
     ports:
       - 5430:9090
-    networks:
-      - my-network 
     restart: always   
     volumes:
       - ./prometheus_prod/:/etc/prometheus/
