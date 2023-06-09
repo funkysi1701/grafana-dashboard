@@ -114,8 +114,8 @@ services:
         - /var/docker/nginx/html:/usr/share/nginx/html
         - ./nginx:/etc/nginx/conf.d:rw
         - /etc/letsencrypt/live:/etc/nginx/certs
-        - /etc/letsencrypt/live/grafana2.funkysi1701.com/normal.pem:/etc/nginx/certs/grafana2.funkysi1701.com/normal.pem
-        - /etc/letsencrypt/live/grafana2.funkysi1701.com/privkey.pem:/etc/nginx/certs/grafana2.funkysi1701.com/privkey.pem
+        - /etc/letsencrypt/live/grafana2.funkysi1701.com-0001/normal.pem:/etc/nginx/certs/grafana2.funkysi1701.com-0001/normal.pem
+        - /etc/letsencrypt/live/grafana2.funkysi1701.com-0001/privkey.pem:/etc/nginx/certs/grafana2.funkysi1701.com-0001/privkey.pem
     logging:
         options:
             max-size: "10m"
