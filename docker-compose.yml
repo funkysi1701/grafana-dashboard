@@ -114,8 +114,8 @@ services:
         - /var/docker/nginx/html:/usr/share/nginx/html
         - ./nginx:/etc/nginx/conf.d:rw
         - /etc/letsencrypt/live:/etc/nginx/certs
-        - /etc/letsencrypt/live/grafana.funkysi1701.com/normal.pem:/etc/nginx/certs/grafana.funkysi1701.com/normal.pem
-        - /etc/letsencrypt/live/grafana.funkysi1701.com/privkey.pem:/etc/nginx/certs/grafana.funkysi1701.com/privkey.pem
+        - /etc/letsencrypt/live/grafana2.funkysi1701.com/normal.pem:/etc/nginx/certs/grafana2.funkysi1701.com/normal.pem
+        - /etc/letsencrypt/live/grafana2.funkysi1701.com/privkey.pem:/etc/nginx/certs/grafana2.funkysi1701.com/privkey.pem
     logging:
         options:
             max-size: "10m"
@@ -147,8 +147,8 @@ services:
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
     environment:
-        VIRTUAL_HOST: grafana.funkysi1701.com
-        LETSENCRYPT_HOST: grafana.funkysi1701.com     
+        VIRTUAL_HOST: grafana2.funkysi1701.com
+        LETSENCRYPT_HOST: grafana2.funkysi1701.com     
 
   hello-world:
     container_name: monitoring_helloworld
