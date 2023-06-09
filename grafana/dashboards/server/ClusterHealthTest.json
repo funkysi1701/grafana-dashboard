@@ -30,7 +30,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -180,7 +180,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "100 - (node_filesystem_avail_bytes{mountpoint=\"/\"} * 100 / node_filesystem_size_bytes{mountpoint=\"/\"})",
@@ -191,7 +191,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "100 - (node_filesystem_avail_bytes{mountpoint=\"/\", instance=\"192.168.20.44:9100\"} * 100 / node_filesystem_size_bytes{mountpoint=\"/\", instance=\"192.168.20.44:9100\"})",
@@ -203,7 +203,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "100 - (node_filesystem_avail_bytes{mountpoint=\"/\", instance=\"192.168.20.45:9100\"} * 100 / node_filesystem_size_bytes{mountpoint=\"/\", instance=\"192.168.20.45:9100\"})",
@@ -215,7 +215,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "100 - (node_filesystem_avail_bytes{mountpoint=\"/\", instance=\"192.168.20.46:9100\"} * 100 / node_filesystem_size_bytes{mountpoint=\"/\", instance=\"192.168.20.46:9100\"})",
@@ -227,7 +227,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "100 - (node_filesystem_avail_bytes{mountpoint=\"/\", instance=\"192.168.20.47:9100\"} * 100 / node_filesystem_size_bytes{mountpoint=\"/\", instance=\"192.168.20.47:9100\"})",
@@ -239,7 +239,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "100 - (node_filesystem_avail_bytes{mountpoint=\"/\", instance=\"192.168.20.48:9100\"} * 100 / node_filesystem_size_bytes{mountpoint=\"/\", instance=\"192.168.20.48:9100\"})",
@@ -255,7 +255,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -381,7 +381,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -398,7 +398,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -548,7 +548,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "100 * (node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes) / node_memory_MemTotal_bytes",

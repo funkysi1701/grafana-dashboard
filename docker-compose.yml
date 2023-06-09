@@ -17,8 +17,6 @@ services:
     container_name: monitoring_prometheus_prod
     ports:
       - 5430:9090
-    networks:
-      - my-network 
     restart: always   
     volumes:
       - ./prometheus_prod/:/etc/prometheus/
@@ -29,33 +27,14 @@ services:
     container_name: monitoring_prometheus_dev
     ports:
       - 5431:9090
-    networks:
-      - my-network 
     restart: always   
     volumes:
       - ./prometheus_dev/:/etc/prometheus/
-      - prometheus_data_dev:/prometheus      
-      
-  grafana:
-    image: grafana/grafana:9.5.3
-    container_name: monitoring_grafana
-    ports:
-      - 8000:3000
-    extra_hosts:
-      - "host.docker.internal:host-gateway"   
-    networks:
-      - my-network 
-    restart: unless-stopped
-    volumes:
-      - ./grafana/etcs:/etc/grafana
-      - ./grafana/provisioning:/etc/grafana/provisioning
-      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - prometheus_data_dev:/prometheus           
 
   mail:
     image: bytemark/smtp
     container_name: monitoring_mail
-    networks:
-      - my-network 
     environment:
       RELAY_HOST: in-v3.mailjet.com
       RELAY_PORT: 587
@@ -70,8 +49,6 @@ services:
       - PIHOLE_API_TOKEN
       - PIHOLE_HOSTNAME
       - PORT=9617
-    networks:
-      - my-network
     restart: unless-stopped  
     ports:
       - 9617:9617
@@ -80,8 +57,6 @@ services:
     image: prom/blackbox-exporter:v0.24.0
     container_name: monitoring_blackbox
     hostname: "blackbox"
-    networks:
-      - my-network
     ports:
     - 9115:9115
     restart: always
@@ -90,18 +65,6 @@ services:
     command:
     - "--config.file=/etc/prometheus/blackbox-exporter.yml"
     
-  yacht:
-    image: selfhostedpro/yacht
-    container_name: monitoring_yacht
-    ports:
-      - 8085:8000
-    networks:
-      - my-network  
-    restart: unless-stopped
-    volumes:
-      - yacht:/config
-      - /var/run/docker.sock:/var/run/docker.sock
-
   telegraf:
     image: telegraf
     container_name: monitoring_telegraf
@@ -131,6 +94,8 @@ services:
   dnsrobocert:
     image: adferrand/dnsrobocert
     container_name: monitoring_dnsrobocert
+    environment:
+      - auth_token 
     volumes:
     - ./dnsrobocert/config.yml:/etc/dnsrobocert/config.yml
     - /etc/letsencrypt:/etc/letsencrypt
@@ -147,12 +112,41 @@ services:
     volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
-        - /etc/letsencrypt/live/helloworld2.funkysi1701.com:/etc/nginx/certs
         - /var/docker/nginx/vhost:/etc/nginx/vhost.d
+        - /etc/letsencrypt/live:/etc/nginx/certs
     logging:
         options:
             max-size: "10m"
             max-file: "3"
+
+  yacht:
+    image: selfhostedpro/yacht
+    container_name: monitoring_yacht
+    expose:
+      - "8000"
+    restart: unless-stopped
+    volumes:
+      - yacht:/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+        VIRTUAL_HOST: yacht.funkysi1701.com
+        LETSENCRYPT_HOST: yacht.funkysi1701.com  
+
+  grafana:
+    image: grafana/grafana:9.5.3
+    container_name: monitoring_grafana
+    expose:
+      - "3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   
+    restart: unless-stopped
+    volumes:
+      - ./grafana/etcs:/etc/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    environment:
+        VIRTUAL_HOST: grafana.funkysi1701.com
+        LETSENCRYPT_HOST: grafana.funkysi1701.com     
 
   hello-world:
     container_name: monitoring_helloworld
@@ -160,8 +154,8 @@ services:
     expose:
         - "8080"
     environment:
-        VIRTUAL_HOST: helloworld2.funkysi1701.com
-        LETSENCRYPT_HOST: helloworld2.funkysi1701.com     
+        VIRTUAL_HOST: helloworld.funkysi1701.com
+        LETSENCRYPT_HOST: helloworld.funkysi1701.com     
 
 volumes:
   prometheus_data_dev:
@@ -169,7 +163,3 @@ volumes:
   grafana:
   yacht:
   influxdb_data:
-
-networks:
-  my-network:
-    external: true
