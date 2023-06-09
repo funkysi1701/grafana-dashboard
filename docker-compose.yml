@@ -114,7 +114,7 @@ services:
         - /var/docker/nginx/html:/usr/share/nginx/html
         - /var/docker/nginx/vhost:/etc/nginx/vhost.d
         - /etc/letsencrypt/live:/etc/nginx/certs
-        - /etc/letsencrypt/live/grafana.funkysi1701.com/normal.pem:/etc/nginx/certs/grafana.funkysi1701.com/fullchain.pem
+        - /etc/letsencrypt/live/grafana.funkysi1701.com/normal.pem:/etc/nginx/certs/grafana.funkysi1701.com/normal.pem
         - /etc/letsencrypt/live/grafana.funkysi1701.com/privkey.pem:/etc/nginx/certs/grafana.funkysi1701.com/privkey.pem
     logging:
         options:
