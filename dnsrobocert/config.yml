@@ -15,11 +15,12 @@ certificates:
 - domains:
   - helloworld.funkysi1701.com
   profile: profile
+  force_renew: true
 - domains:
-  - grafana2.funkysi1701.com
+  - grafana.funkysi1701.com
   profile: profile 
-  force_renew: false
+  force_renew: true
 - domains:
   - yacht.funkysi1701.com
   profile: profile   
-  force_renew: true
+  force_renew: false
