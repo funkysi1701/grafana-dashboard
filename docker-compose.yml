@@ -166,7 +166,3 @@ volumes:
   grafana:
   yacht:
   influxdb_data:
-
-networks:
-  my-network:
-    external: true
