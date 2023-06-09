@@ -8,7 +8,6 @@ trigger:
     include:
     - main
     - develop
-    - feature/ssl
 
 pool: docker
 
