@@ -18,6 +18,7 @@ certificates:
 - domains:
   - grafana.funkysi1701.com
   profile: profile 
+  force_renew: true
 - domains:
   - yacht.funkysi1701.com
   profile: profile   
