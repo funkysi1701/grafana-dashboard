@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -74,7 +74,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "builder",
           "expr": "node_filesystem_free_bytes{device=\"/dev/mapper/ubuntu--vg-ubuntu--lv\"}",
@@ -89,7 +89,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -150,9 +150,9 @@
               "options": {
                 "mode": "exclude",
                 "names": [
-                  "{__name__=\"node_filesystem_free_bytes\", device=\"/dev/mapper/ubuntu--vg-ubuntu--lv\", fstype=\"ext4\", instance=\"server04.local:9100\", job=\"node\", mountpoint=\"/\"}",
-                  "{__name__=\"windows_logical_disk_free_bytes\", instance=\"server01:9182\", job=\"windows\", volume=\"D:\"}",
-                  "{__name__=\"windows_logical_disk_free_bytes\", instance=\"server01:9182\", job=\"windows\", volume=\"C:\"}"
+                  "D:",
+                  "C:",
+                  "/"
                 ],
                 "prefix": "All except:",
                 "readOnly": true
@@ -194,23 +194,23 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "builder",
           "expr": "windows_logical_disk_free_bytes",
-          "legendFormat": "__auto",
+          "legendFormat": "{{volume}}",
           "range": true,
           "refId": "A"
         },
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "node_filesystem_free_bytes",
           "hide": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{mountpoint}}",
           "range": true,
           "refId": "B"
         }
@@ -221,7 +221,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -275,7 +275,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "time() - node_boot_time_seconds",
@@ -290,7 +290,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -339,7 +339,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "builder",
           "expr": "node_memory_MemFree_bytes",
@@ -354,7 +354,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -403,7 +403,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "builder",
           "expr": "windows_logical_disk_free_bytes{volume=\"C:\"}",
@@ -418,7 +418,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -472,7 +472,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "code",
           "expr": "time() - windows_system_system_up_time ",
@@ -487,7 +487,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -536,7 +536,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "builder",
           "expr": "windows_os_physical_memory_free_bytes",
@@ -551,7 +551,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -630,23 +630,23 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "builder",
           "expr": "windows_os_physical_memory_free_bytes",
-          "legendFormat": "__auto",
+          "legendFormat": "{{job}}",
           "range": true,
           "refId": "A"
         },
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "builder",
           "expr": "node_memory_MemFree_bytes",
           "hide": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{job}}",
           "range": true,
           "refId": "B"
         }
@@ -657,7 +657,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -706,7 +706,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "editorMode": "builder",
           "expr": "windows_logical_disk_free_bytes{volume=\"D:\"}",

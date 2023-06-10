@@ -36,7 +36,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "description": "",
       "fieldConfig": {
@@ -84,7 +84,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "expr": "sum(increase(http_request_duration_seconds_bucket[$interval])) by (le)",
           "format": "heatmap",
@@ -131,7 +131,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "description": "",
       "fieldConfig": {
@@ -181,7 +181,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "expr": "http_requests_in_progress",
           "format": "time_series",
@@ -227,7 +227,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "description": "",
       "fieldConfig": {
@@ -292,7 +292,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "expr": "process_start_time_seconds{instance =~ \"$instances\"} * 1000",
           "format": "time_series",
@@ -311,7 +311,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "fieldConfig": {
         "defaults": {
@@ -360,7 +360,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "expr": "increase(dotnet_collection_count_total[$interval])",
           "format": "time_series",
@@ -407,7 +407,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "decimals": 0,
       "fieldConfig": {
@@ -456,7 +456,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "expr": "dotnet_total_memory_bytes /1024/1024",
           "format": "time_series",
@@ -505,7 +505,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "decimals": 0,
       "description": "",
@@ -555,7 +555,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "expr": "process_num_threads",
           "format": "time_series",
@@ -602,7 +602,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "decimals": 0,
       "description": "",
@@ -653,7 +653,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "expr": "process_open_handles",
           "format": "time_series",
@@ -701,7 +701,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "P20069563C858A330"
       },
       "decimals": 0,
       "fieldConfig": {
@@ -750,7 +750,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "P20069563C858A330"
           },
           "expr": "process_working_set_bytes /1024/1024",
           "format": "time_series",
@@ -892,7 +892,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFA97CFB590B2093"
+          "uid": "P20069563C858A330"
         },
         "definition": "label_values(http_requests_received_total, instance)",
         "hide": 0,

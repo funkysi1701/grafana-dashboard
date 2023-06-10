@@ -1,0 +1,26 @@
+draft: false
+acme:
+  email_account: funkysi1701@gmail.com
+  staging: false
+  certs_permissions:
+    files_mode: 0644
+    dirs_mode: 0755
+profiles:
+- name: profile
+  provider: cloudflare
+  provider_options:
+    auth_token: ${auth_token}
+    zoneid: 7f7ed64b3c12075d64b61d0232399026
+certificates:
+- domains:
+  - helloworld.funkysi1701.com
+  profile: profile
+  force_renew: false
+- domains:
+  - grafana.funkysi1701.com
+  profile: profile 
+  force_renew: false
+- domains:
+  - yacht.funkysi1701.com
+  profile: profile   
+  force_renew: false
