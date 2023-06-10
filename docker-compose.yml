@@ -118,7 +118,11 @@ services:
         - /etc/letsencrypt/live/yacht.funkysi1701.com/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
         - /etc/letsencrypt/live/yacht.funkysi1701.com/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key 
         - /etc/letsencrypt/live/helloworld.funkysi1701.com/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
-        - /etc/letsencrypt/live/helloworld.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key                
+        - /etc/letsencrypt/live/helloworld.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key   
+        - /etc/letsencrypt/live/projectpyramidapi-dev-docker.funkysi1701.com/fullchain.pem:/etc/nginx/certs/projectpyramidapi-dev-docker.funkysi1701.com.crt
+        - /etc/letsencrypt/live/projectpyramidapi-dev-docker.funkysi1701.com/privkey.pem:/etc/nginx/certs/projectpyramidapi-dev-docker.funkysi1701.com.key    
+        - /etc/letsencrypt/live/projectpyramid-dev-docker.funkysi1701.com/fullchain.pem:/etc/nginx/certs/projectpyramid-dev-docker.funkysi1701.com.crt
+        - /etc/letsencrypt/live/projectpyramid-dev-docker.funkysi1701.com/privkey.pem:/etc/nginx/certs/projectpyramid-dev-docker.funkysi1701.com.key                 
     logging:
         options:
             max-size: "10m"

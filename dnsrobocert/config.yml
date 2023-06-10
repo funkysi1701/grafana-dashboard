@@ -24,3 +24,11 @@ certificates:
   - yacht.funkysi1701.com
   profile: profile   
   force_renew: false
+- domains:
+  - projectpyramid-dev-docker.funkysi1701.com
+  profile: profile   
+  force_renew: false
+- domains:
+  - projectpyramidapi-dev-docker.funkysi1701.com
+  profile: profile   
+  force_renew: false    
