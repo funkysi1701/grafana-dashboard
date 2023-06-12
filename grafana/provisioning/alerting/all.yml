@@ -1,8 +1,7 @@
 apiVersion: 1
 contactPoints:
   - orgId: 1
-    # <string, required> name of the contact point
-    name: grafana-default-email2
+    name: grafana-default-email
     receivers:
     - name: email
       uid: abcdefg
@@ -10,9 +9,6 @@ contactPoints:
       type: email
       settings: 
         addresses: "funkysi1701@gmail.com"
-policies:
-  - orgId: 1
-    receiver: grafana-default-email2    
 groups:
     - orgId: 1
       name: Pyramid
