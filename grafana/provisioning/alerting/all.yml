@@ -103,7 +103,7 @@ groups:
                     uid: P53191270F01589AB
                 editorMode: builder
                 exemplar: false
-                expr: up{job="pyramidapi-prod"}
+                expr: up{job="pyramidapi-dev"}
                 format: time_series
                 hide: false
                 instant: false
