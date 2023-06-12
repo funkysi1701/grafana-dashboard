@@ -1,6 +1,7 @@
 apiVersion: 1
 notifiers:
 - name: email-1
+  uid: abcdefg
   org_name: Main Org.
   type: email
   settings: 
