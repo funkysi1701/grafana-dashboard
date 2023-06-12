@@ -10,3 +10,6 @@ contactPoints:
       type: email
       settings: 
         addresses: "funkysi1701@gmail.com"
+policies:
+  - orgId: 1
+    receiver: grafana-default-email        
