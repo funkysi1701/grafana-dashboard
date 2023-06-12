@@ -5,8 +5,7 @@ groups:
       folder: General Alerting
       interval: 1m
       rules:
-        - uid: Bcjczc-4k
-          title: Pyramid API Down
+        - title: Pyramid API Prod Down
           condition: C
           data:
             - refId: A
@@ -88,3 +87,85 @@ groups:
           execErrState: Error
           for: 5m
           isPaused: false
+        - title: Pyramid API Dev Down
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 900
+                to: 0
+              datasourceUid: P53191270F01589AB
+              model:
+                datasource:
+                    type: prometheus
+                    uid: P53191270F01589AB
+                editorMode: builder
+                exemplar: false
+                expr: up{job="pyramidapi-prod"}
+                format: time_series
+                hide: false
+                instant: false
+                interval: ""
+                intervalMs: 1000
+                legendFormat: __auto
+                maxDataPoints: 43200
+                range: true
+                refId: A
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 0
+                            - 0
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 1
+                            - 0
+                        type: lt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - A
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: ""
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: classic_conditions
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          isPaused: false          
