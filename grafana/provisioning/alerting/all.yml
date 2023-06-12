@@ -5,7 +5,8 @@ groups:
       folder: General Alerting
       interval: 1m
       rules:
-        - title: Pyramid API Prod Down
+        - uid: Bcjczc-4a
+          title: Pyramid API Prod Down
           condition: C
           data:
             - refId: A
@@ -87,7 +88,8 @@ groups:
           execErrState: Error
           for: 5m
           isPaused: false
-        - title: Pyramid API Dev Down
+        - uid: Bcjczc-4b
+          title: Pyramid API Dev Down
           condition: C
           data:
             - refId: A
