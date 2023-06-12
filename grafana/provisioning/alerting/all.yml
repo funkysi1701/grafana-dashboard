@@ -13,11 +13,11 @@ groups:
               relativeTimeRange:
                 from: 900
                 to: 0
-              datasourceUid: PBFA97CFB590B2093
+              datasourceUid: P20069563C858A330
               model:
                 datasource:
                     type: prometheus
-                    uid: PBFA97CFB590B2093
+                    uid: P20069563C858A330
                 editorMode: builder
                 exemplar: false
                 expr: up{job="pyramidapi-prod"}
