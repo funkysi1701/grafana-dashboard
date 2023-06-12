@@ -5,6 +5,5 @@ notifiers:
   org_name: Main Org.
   type: email
   settings: 
-    addresses: [
-      "funkysi1701@gmail.com"
-    ]
+    addresses: 
+      - "funkysi1701@gmail.com"
