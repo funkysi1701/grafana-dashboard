@@ -1,10 +1,13 @@
 apiVersion: 1
+deleteContactPoints:
+  - orgId: 1
+    uid: grafana-default-email
 contactPoints:
   - orgId: 1
     # <string, required> name of the contact point
-    name: grafana-default-email
+    name: grafana-default-email2
     receivers:
-    - name: email-1
+    - name: email
       uid: abcdefg
       org_name: Main Org.
       type: email
@@ -12,4 +15,4 @@ contactPoints:
         addresses: "funkysi1701@gmail.com"
 policies:
   - orgId: 1
-    receiver: grafana-default-email        
+    receiver: grafana-default-email2        
