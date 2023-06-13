@@ -19,6 +19,5 @@ certificates:
   - yacht.funkysi1701.com
   profile: profile  
 - domains:
-  - grafana.funkysi1701.com
   - dashboards.funkysi1701.com
   profile: profile    
