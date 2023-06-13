@@ -21,3 +21,6 @@ certificates:
 - domains:
   - dashboards.funkysi1701.com
   profile: profile    
+- domains:
+  - "*.funkysi1701.com"
+  profile: profile      
