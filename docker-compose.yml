@@ -116,8 +116,8 @@ services:
         - /etc/letsencrypt/live/yacht.funkysi1701.com/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key 
         - /etc/letsencrypt/live/helloworld.funkysi1701.com/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
         - /etc/letsencrypt/live/helloworld.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key    
-        - /etc/letsencrypt/live/grafana.funkysi1701.com/fullchain.pem:/etc/nginx/certs/grafana.funkysi1701.com.crt
-        - /etc/letsencrypt/live/grafana.funkysi1701.com/privkey.pem:/etc/nginx/certs/grafana.funkysi1701.com.key                           
+        - /etc/letsencrypt/live/grafana.funkysi1701.com-0001/fullchain.pem:/etc/nginx/certs/grafana.funkysi1701.com.crt
+        - /etc/letsencrypt/live/grafana.funkysi1701.com-0001/privkey.pem:/etc/nginx/certs/grafana.funkysi1701.com.key                           
     logging:
         options:
             max-size: "10m"
