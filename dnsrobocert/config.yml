@@ -13,5 +13,8 @@ profiles:
     zoneid: 7f7ed64b3c12075d64b61d0232399026
 certificates:
 - domains:
+  - yacht.funkysi1701.com
+  profile: profile
+- domains:
   - helloworld.funkysi1701.com
   profile: profile 
