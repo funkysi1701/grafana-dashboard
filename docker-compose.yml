@@ -113,11 +113,7 @@ services:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
         - /etc/letsencrypt/live/yacht.funkysi1701.com/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
-        - /etc/letsencrypt/live/yacht.funkysi1701.com/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key 
-        - /etc/letsencrypt/live/helloworld.funkysi1701.com/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
-        - /etc/letsencrypt/live/helloworld.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key    
-        - /etc/letsencrypt/live/funkysi1701.com/fullchain.pem:/etc/nginx/certs/funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com/privkey.pem:/etc/nginx/certs/funkysi1701.com.key                           
+        - /etc/letsencrypt/live/yacht.funkysi1701.com/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key                        
     logging:
         options:
             max-size: "10m"
