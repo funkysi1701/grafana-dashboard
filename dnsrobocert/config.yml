@@ -15,3 +15,6 @@ certificates:
 - domains:
   - yacht.funkysi1701.com
   profile: profile
+- domains:
+  - helloworld.funkysi1701.com
+  profile: profile 

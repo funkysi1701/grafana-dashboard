@@ -9,6 +9,7 @@ trigger:
     - main
     - develop
     - feature/yacht-ssl
+    - feature/helloworld-ssl
 
 pool: docker
 
