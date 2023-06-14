@@ -18,4 +18,5 @@ certificates:
   - yacht.funkysi1701.com
   - helloworld.funkysi1701.com
   - test.funkysi1701.com
+  - grafana.funkysi1701.com
   profile: profile    
