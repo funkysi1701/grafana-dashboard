@@ -1,7 +1,7 @@
 draft: false
 acme:
   email_account: funkysi1701@gmail.com
-  staging: false
+  staging: true
   certs_permissions:
     files_mode: 0644
     dirs_mode: 0755
