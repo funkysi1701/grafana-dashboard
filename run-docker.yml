@@ -8,6 +8,7 @@ trigger:
     include:
     - main
     - develop
+    - feature/helloworld-ssl
 
 pool: docker
 
