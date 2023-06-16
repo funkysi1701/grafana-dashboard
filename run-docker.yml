@@ -8,9 +8,7 @@ trigger:
     include:
     - main
     - develop
-    - feature/grafana-ssl
-    - feature/yacht-ssl
-    - feature/helloworld-ssl
+    - feature/*
 
 pool: docker
 
