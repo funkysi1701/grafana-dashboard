@@ -12,15 +12,9 @@ profiles:
     auth_token: ${auth_token}
     zoneid: 7f7ed64b3c12075d64b61d0232399026
 certificates:
-- domains:
-  - helloworld.funkysi1701.com
-  profile: profile
-  force_renew: false
-- domains:
-  - grafana.funkysi1701.com
-  profile: profile 
-  force_renew: false
-- domains:
-  - yacht.funkysi1701.com
-  profile: profile   
-  force_renew: false
+- name: funkysi1701.com
+  domains:
+  - "*.funkysi1701.com"
+  - foo.funkysi1701.co.uk
+  - boo.funkysi1701.co.uk
+  profile: profile    

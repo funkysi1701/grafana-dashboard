@@ -112,13 +112,12 @@ services:
     volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
-        - /etc/letsencrypt/live:/etc/nginx/certs
-        - /etc/letsencrypt/live/grafana.funkysi1701.com-0003/fullchain.pem:/etc/nginx/certs/grafana.funkysi1701.com.crt
-        - /etc/letsencrypt/live/grafana.funkysi1701.com-0003/privkey.pem:/etc/nginx/certs/grafana.funkysi1701.com.key
-        - /etc/letsencrypt/live/yacht.funkysi1701.com/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
-        - /etc/letsencrypt/live/yacht.funkysi1701.com/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key 
-        - /etc/letsencrypt/live/helloworld.funkysi1701.com/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
-        - /etc/letsencrypt/live/helloworld.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key                
+        - /etc/letsencrypt/live/funkysi1701.com/fullchain.pem:/etc/nginx/certs/dashboards.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com/privkey.pem:/etc/nginx/certs/dashboards.funkysi1701.com.key                      
+        - /etc/letsencrypt/live/funkysi1701.com/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key                        
+        - /etc/letsencrypt/live/funkysi1701.com/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key                            
     logging:
         options:
             max-size: "10m"
@@ -138,7 +137,7 @@ services:
         LETSENCRYPT_HOST: yacht.funkysi1701.com  
 
   grafana:
-    image: grafana/grafana:9.5.3
+    image: grafana/grafana:10.0.0
     container_name: monitoring_grafana
     expose:
       - "3000"
@@ -150,8 +149,8 @@ services:
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
     environment:
-        VIRTUAL_HOST: grafana.funkysi1701.com
-        LETSENCRYPT_HOST: grafana.funkysi1701.com     
+        VIRTUAL_HOST: dashboards.funkysi1701.com
+        LETSENCRYPT_HOST: dashboards.funkysi1701.com     
 
   hello-world:
     container_name: monitoring_helloworld

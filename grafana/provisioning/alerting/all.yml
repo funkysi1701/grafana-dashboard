@@ -1,23 +1,33 @@
 apiVersion: 1
+contactPoints:
+  - orgId: 1
+    name: grafana-default-email
+    receivers:
+    - name: email
+      uid: abcdefg
+      orgId: 1
+      type: email
+      settings: 
+        addresses: "funkysi1701@gmail.com"
 groups:
     - orgId: 1
       name: Pyramid
       folder: General Alerting
       interval: 1m
       rules:
-        - uid: Bcjczc-4k
-          title: Pyramid API Down
+        - uid: Bcjczc-4a
+          title: Pyramid API Prod Down
           condition: C
           data:
             - refId: A
               relativeTimeRange:
                 from: 900
                 to: 0
-              datasourceUid: PBFA97CFB590B2093
+              datasourceUid: P20069563C858A330
               model:
                 datasource:
                     type: prometheus
-                    uid: PBFA97CFB590B2093
+                    uid: P20069563C858A330
                 editorMode: builder
                 exemplar: false
                 expr: up{job="pyramidapi-prod"}
@@ -88,3 +98,86 @@ groups:
           execErrState: Error
           for: 5m
           isPaused: false
+        - uid: Bcjczc-4b
+          title: Pyramid API Dev Down
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 900
+                to: 0
+              datasourceUid: P53191270F01589AB
+              model:
+                datasource:
+                    type: prometheus
+                    uid: P53191270F01589AB
+                editorMode: builder
+                exemplar: false
+                expr: up{job="pyramidapi-dev"}
+                format: time_series
+                hide: false
+                instant: false
+                interval: ""
+                intervalMs: 1000
+                legendFormat: __auto
+                maxDataPoints: 43200
+                range: true
+                refId: A
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 0
+                            - 0
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 1
+                            - 0
+                        type: lt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - A
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: ""
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: classic_conditions
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          isPaused: false          
