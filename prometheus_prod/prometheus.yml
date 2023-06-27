@@ -27,6 +27,14 @@ scrape_configs:
     static_configs:
     - targets: ['projectpyramidapi.eurosafeuk.co.uk:443']    
 
+  - job_name: 'pyramidui-prod'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 30s
+    static_configs:
+    - targets: ['projectpyramid.eurosafeuk.co.uk:443']   
+
   - job_name: 'pihole'
     static_configs:
       - targets: ['pihole:9617']        
