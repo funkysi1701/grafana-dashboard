@@ -76,7 +76,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -144,7 +144,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -210,7 +210,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -273,7 +273,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -336,7 +336,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -399,7 +399,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -599,7 +599,7 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum by(controller, action) (irate(http_requests_received_total{namespace=~\"$namespace\"}[1m]) * 60)",
+          "expr": "sum by(controller, action) (irate(http_requests_received_total{host=\"projectpyramidapi.eurosafeuk.co.uk\"}[1m])) * 60",
           "legendFormat": "{{controller}} - {{action}}",
           "range": true,
           "refId": "A"
@@ -657,7 +657,7 @@
         "showUnfilled": true,
         "valueMode": "color"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -725,7 +725,7 @@
         "showUnfilled": true,
         "valueMode": "color"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -804,7 +804,7 @@
           "reverse": false
         }
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
