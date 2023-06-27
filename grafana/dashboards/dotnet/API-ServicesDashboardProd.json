@@ -85,7 +85,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(round(increase(http_requests_received_total{code=~\"2\\\\d\\\\d\",host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=~\"2\\\\d\\\\d\",host=~\"$url\"}[$__range])))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -153,7 +153,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(round(increase(http_requests_received_total{code=\"400\", host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"400\", host=~\"$url\"}[$__range])))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -218,7 +218,7 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"404\", host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"404\", host=~\"$url\"}[$__range])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -281,7 +281,7 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"405\", host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"405\", host=~\"$url\"}[$__range])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -344,7 +344,7 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"409\", host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"409\", host=~\"$url\"}[$__range])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -407,7 +407,7 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"500\", host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"500\", host=~\"$url\"}[$__range])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -503,7 +503,7 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum by(code, controller, action) (irate(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\",host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range]) * 60)",
+          "expr": "sum by(code, controller, action) (irate(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\",host=~\"$url\"}[$__range]) * 60)",
           "legendFormat": "{{code}} - {{controller}} - {{action}}",
           "range": true,
           "refId": "A"
@@ -599,7 +599,7 @@
             "uid": "P20069563C858A330"
           },
           "editorMode": "code",
-          "expr": "sum by(controller, action) (irate(http_requests_received_total{host=\"projectpyramidapi.eurosafeuk.co.uk\"}[1m])) * 60",
+          "expr": "sum by(controller, action) (irate(http_requests_received_total{host=~\"$url\"}[1m])) * 60",
           "legendFormat": "{{controller}} - {{action}}",
           "range": true,
           "refId": "A"
@@ -666,7 +666,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(controller, action) (rate(http_request_duration_seconds_count{host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range]))))",
+          "expr": "topk(10, (sum by(controller, action) (rate(http_request_duration_seconds_count{host=~\"$url\"}[$__range]))))",
           "instant": true,
           "legendFormat": "{{controller}} - {{action}}",
           "range": false,
@@ -734,7 +734,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(controller, action) (increase(http_requests_received_total{host=\"projectpyramidapi.eurosafeuk.co.uk\"}[$__range]))))",
+          "expr": "topk(10, (sum by(controller, action) (increase(http_requests_received_total{host=~\"$url\"}[$__range]))))",
           "instant": true,
           "legendFormat": "{{controller}} - {{action}}",
           "range": false,
@@ -813,7 +813,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(increase(http_request_duration_seconds_bucket{host=\"projectpyramidapi.eurosafeuk.co.uk\"}[1m])) by(le)",
+          "expr": "sum(increase(http_request_duration_seconds_bucket{host=~\"$url\"}[1m])) by(le)",
           "format": "heatmap",
           "instant": false,
           "legendFormat": "__auto",
@@ -834,7 +834,35 @@
     ".net core"
   ],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": "API",
+          "value": "projectpyramidapi.eurosafeuk.co.uk"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "url",
+        "options": [
+          {
+            "selected": true,
+            "text": "API",
+            "value": "projectpyramidapi.eurosafeuk.co.uk"
+          },
+          {
+            "selected": false,
+            "text": "UI",
+            "value": "projectpyramid.eurosafeuk.co.uk"
+          }
+        ],
+        "query": "projectpyramidapi.eurosafeuk.co.uk, projectpyramid.eurosafeuk.co.uk",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
   },
   "time": {
     "from": "now-1h",
