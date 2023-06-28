@@ -836,58 +836,38 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": true,
-          "text": "API",
-          "value": "projectpyramidapi.eurosafeuk.co.uk"
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${env}"
         },
+        "definition": "label_values(host)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "url",
-        "options": [
-          {
-            "selected": true,
-            "text": "API",
-            "value": "projectpyramidapi.eurosafeuk.co.uk"
-          },
-          {
-            "selected": false,
-            "text": "UI",
-            "value": "projectpyramid.eurosafeuk.co.uk"
-          }
-        ],
-        "query": "projectpyramidapi.eurosafeuk.co.uk, projectpyramid.eurosafeuk.co.uk",
-        "queryValue": "",
+        "options": [],
+        "query": {
+          "query": "label_values(host)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
         "skipUrlSync": false,
-        "type": "custom"
+        "sort": 0,
+        "type": "query"
       },
       {
-        "current": {
-          "selected": true,
-          "text": "Dev",
-          "value": "P53191270F01589AB"
-        },
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "env",
-        "options": [
-          {
-            "selected": true,
-            "text": "Dev",
-            "value": "P53191270F01589AB"
-          },
-          {
-            "selected": false,
-            "text": "Prod",
-            "value": "P20069563C858A330"
-          }
-        ],
-        "query": "P53191270F01589AB, P20069563C858A330",
+        "options": [],
+        "query": "prometheus",
         "queryValue": "",
+        "refresh": 1,
+        "regex": "",
         "skipUrlSync": false,
-        "type": "custom"
+        "type": "datasource"
       }
     ]
   },
@@ -897,7 +877,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "API/Services Prod",
+  "title": "API/Services",
   "uid": "d2b4c47c-1353-47c1-a832-ddfca09a865c",
   "version": 1,
   "weekStart": ""
