@@ -94,6 +94,7 @@ groups:
                 maxDataPoints: 43200
                 refId: C
                 type: classic_conditions
+          dashboardUid: "d2b4c47c-1353-47c1-a832-ddfca09a865c"  
           noDataState: NoData
           execErrState: Error
           for: 5m
@@ -177,6 +178,7 @@ groups:
                 maxDataPoints: 43200
                 refId: C
                 type: classic_conditions
+          dashboardUid: "d2b4c47c-1353-47c1-a832-ddfca09a865c"  
           noDataState: NoData
           execErrState: Error
           for: 5m
@@ -260,6 +262,7 @@ groups:
                 maxDataPoints: 43200
                 refId: C
                 type: classic_conditions
+          dashboardUid: "d2b4c47c-1353-47c1-a832-ddfca09a865c"                  
           noDataState: NoData
           execErrState: Error
           for: 5m
@@ -343,6 +346,7 @@ groups:
                 maxDataPoints: 43200
                 refId: C
                 type: classic_conditions
+          dashboardUid: "d2b4c47c-1353-47c1-a832-ddfca09a865c"                  
           noDataState: NoData
           execErrState: Error
           for: 5m
