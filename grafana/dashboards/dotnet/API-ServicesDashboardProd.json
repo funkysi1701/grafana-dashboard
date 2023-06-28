@@ -8,7 +8,6 @@
           "uid": "-- Grafana --"
         },
         "enable": true,
-        "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
         "target": {
@@ -26,12 +25,29 @@
         },
         "enable": true,
         "iconColor": "red",
-        "name": "Deployments",
+        "name": "DevDeployments",
         "target": {
           "limit": 100,
           "matchAny": false,
           "tags": [
             "DevDeployment"
+          ],
+          "type": "tags"
+        }
+      },
+      {
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "iconColor": "blue",
+        "name": "LiveDeployments",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [
+            "LiveDeployment"
           ],
           "type": "tags"
         }
