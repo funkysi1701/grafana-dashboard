@@ -839,7 +839,7 @@
         "current": {
           "selected": true,
           "text": "API",
-          "value": "projectpyramidapi.eurosafeuk.co.uk"
+          "value": "projectpyramidapi-dev.funkysi1701.com"
         },
         "hide": 0,
         "includeAll": false,
@@ -849,15 +849,15 @@
           {
             "selected": true,
             "text": "API",
-            "value": "projectpyramidapi.eurosafeuk.co.uk"
-      },
-      {
-          "selected": false,
+            "value": "projectpyramidapi-dev.funkysi1701.com"
+          },
+          {
+            "selected": false,
             "text": "UI",
-            "value": "projectpyramid.eurosafeuk.co.uk"
+            "value": "projectpyramid-dev.funkysi1701.com"
           }
-          ],
-        "query": "projectpyramidapi.eurosafeuk.co.uk, projectpyramid.eurosafeuk.co.uk",
+        ],
+        "query": "projectpyramidapi-dev.funkysi1701.com, projectpyramid-dev.funkysi1701.com",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
