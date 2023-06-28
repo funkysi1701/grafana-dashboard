@@ -37,7 +37,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "description": "Counts all requests, both successful and failed",
       "fieldConfig": {
@@ -76,7 +76,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -88,7 +88,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\"}[3m])) by (controller)",
           "legendFormat": "{{controller}}",
@@ -97,7 +97,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller = \"\"}[3m]))",
           "legendFormat": "(None)",
@@ -138,7 +138,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "description": "",
       "fieldConfig": {
@@ -198,12 +198,12 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\"}[3m]))",
           "instant": false,
@@ -216,7 +216,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "description": "Across ALL controllers globally!",
       "fieldConfig": {
@@ -276,12 +276,12 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "sum(http_requests_in_progress{instance =~ \"$instances\"})",
           "instant": false,
@@ -303,7 +303,7 @@
       "dataFormat": "tsbuckets",
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "description": "Does NOT include requests that were not mapped to an ASP.NET Core controller!",
       "fieldConfig": {
@@ -372,13 +372,13 @@
           "unit": "s"
         }
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "reverseYBuckets": false,
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "sum(increase(http_request_duration_seconds_bucket{instance =~ \"$instances\", controller =~ \"$controllers\"}[$__interval])) by (le)",
           "format": "heatmap",
@@ -413,7 +413,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "description": "4xx and 5xx status codes",
       "fieldConfig": {
@@ -452,7 +452,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -464,7 +464,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller =~ \"$controllers\", code =~ \"5\\\\d\\\\d|4\\\\d\\\\d\"}[3m])) by (controller)",
           "legendFormat": "{{controller}}",
@@ -473,7 +473,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "sum(rate(http_requests_received_total{instance =~ \"$instances\", controller = \"\", code =~ \"5\\\\d\\\\d|4\\\\d\\\\d\"}[3m])) by (controller)",
           "legendFormat": "(None)",
@@ -524,18 +524,9 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
-        },
         "datasource": {
           "type": "prometheus",
-          "uid": "P20069563C858A330"
+          "uid": "$env"
         },
         "definition": "label_values(http_requests_received_total, instance)",
         "hide": 0,
@@ -558,18 +549,9 @@
         "useTags": false
       },
       {
-        "current": {
-          "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
-        },
         "datasource": {
           "type": "prometheus",
-          "uid": "P20069563C858A330"
+          "uid": "${env}"
         },
         "definition": "label_values(http_requests_received_total{instance =~ \"$instances\"}, controller)",
         "hide": 0,
@@ -590,6 +572,19 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "env",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
       }
     ]
   },
