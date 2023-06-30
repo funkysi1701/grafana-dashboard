@@ -2,22 +2,38 @@
   "annotations": {
     "list": [
       {
-        "builtIn": 1,
         "datasource": {
-          "type": "grafana",
-          "uid": "-- Grafana --"
+          "type": "datasource",
+          "uid": "grafana"
         },
         "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
+        "iconColor": "red",
+        "name": "DevDeployments",
         "target": {
           "limit": 100,
           "matchAny": false,
-          "tags": [],
-          "type": "dashboard"
+          "tags": [
+            "DevDeployments"
+          ],
+          "type": "tags"
+        }
+      },
+      {
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
         },
-        "type": "dashboard"
+        "enable": true,
+        "iconColor": "blue",
+        "name": "LiveDeployments",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [
+            "LiveDeployments"
+          ],
+          "type": "tags"
+        }
       }
     ]
   },
@@ -30,7 +46,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -76,16 +92,16 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(round(increase(http_requests_received_total{code=~\"2\\\\d\\\\d\",namespace=~\"$namespace\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=~\"2\\\\d\\\\d\",host=~\"$url\"}[$__range])))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -98,7 +114,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -144,16 +160,16 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(round(increase(http_requests_received_total{code=\"400\", namespace=~\"$namespace\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"400\", host=~\"$url\"}[$__range])))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -166,7 +182,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -210,15 +226,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"404\", namespace=~\"$namespace\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"404\", host=~\"$url\"}[$__range])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -230,7 +246,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -273,15 +289,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"405\", namespace=~\"$namespace\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"405\", host=~\"$url\"}[$__range])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -293,7 +309,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -336,15 +352,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"409\", namespace=~\"$namespace\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"409\", host=~\"$url\"}[$__range])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -356,7 +372,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -399,15 +415,15 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"500\", namespace=~\"$namespace\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=\"500\", host=~\"$url\"}[$__range])))",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -419,7 +435,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -500,11 +516,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum by(code, controller, action) (irate(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\",namespace=~\"$namespace\"}[$__range]) * 60)",
-          "legendFormat": "{{code}} - {{controller}} - {{action}}",
+          "expr": "sum by(code, endpoint, page) (irate(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\",host=~\"$url\"}[$__range]) * 60)",
+          "legendFormat": "{{code}} - {{endpoint}} {{page}}",
           "range": true,
           "refId": "A"
         }
@@ -515,7 +531,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -596,11 +612,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum by(controller, action) (irate(http_requests_received_total{namespace=~\"$namespace\"}[1m]) * 60)",
-          "legendFormat": "{{controller}} - {{action}}",
+          "expr": "sum by(endpoint, page) (irate(http_requests_received_total{host=~\"$url\"}[1m])) * 60",
+          "legendFormat": "{{endpoint}} {{page}}",
           "range": true,
           "refId": "A"
         }
@@ -611,7 +627,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -657,18 +673,18 @@
         "showUnfilled": true,
         "valueMode": "color"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(controller, action) (rate(http_request_duration_seconds_count{namespace=~\"$namespace\"}[$__range]))))",
+          "expr": "topk(10, (sum by(endpoint, page) (rate(http_request_duration_seconds_count{host=~\"$url\"}[$__range]))))",
           "instant": true,
-          "legendFormat": "{{controller}} - {{action}}",
+          "legendFormat": "{{endpoint}} {{page}}",
           "range": false,
           "refId": "A"
         }
@@ -679,7 +695,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -725,18 +741,18 @@
         "showUnfilled": true,
         "valueMode": "color"
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(controller, action) (increase(http_requests_received_total{namespace=~\"$namespace\"}[$__range]))))",
+          "expr": "topk(10, (sum by(endpoint, page) (increase(http_requests_received_total{host=~\"$url\"}[$__range]))))",
           "instant": true,
-          "legendFormat": "{{controller}} - {{action}}",
+          "legendFormat": "{{endpoint}} {{page}}",
           "range": false,
           "refId": "A"
         }
@@ -747,7 +763,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -804,16 +820,16 @@
           "reverse": false
         }
       },
-      "pluginVersion": "9.5.3",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(increase(http_request_duration_seconds_bucket{namespace=~\"$namespace\"}[1m])) by(le)",
+          "expr": "sum(increase(http_request_duration_seconds_bucket{host=~\"$url\"}[1m])) by(le)",
           "format": "heatmap",
           "instant": false,
           "legendFormat": "__auto",
@@ -825,7 +841,7 @@
       "type": "heatmap"
     }
   ],
-  "refresh": "5s",
+  "refresh": "30s",
   "schemaVersion": 38,
   "style": "dark",
   "tags": [
@@ -836,16 +852,31 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": false,
-          "text": "PrometheusProd",
-          "value": "PrometheusProd"
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${env}"
         },
-        "hide": 2,
+        "definition": "label_values(host)",
+        "hide": 0,
         "includeAll": false,
-        "label": "Data Source",
         "multi": false,
-        "name": "datasource",
+        "name": "url",
+        "options": [],
+        "query": {
+          "query": "label_values(host)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "env",
         "options": [],
         "query": "prometheus",
         "queryValue": "",
@@ -853,69 +884,6 @@
         "regex": "",
         "skipUrlSync": false,
         "type": "datasource"
-      },
-      {
-        "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "$datasource"
-        },
-        "definition": "",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "cluster",
-        "options": [],
-        "query": {
-          "query": "label_values(up{job=\"kube-state-metrics\"}, cluster)",
-          "refId": "Prometheus-cluster-Variable-Query"
-        },
-        "refresh": 2,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "current": {
-          "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "$datasource"
-        },
-        "definition": "",
-        "hide": 0,
-        "includeAll": true,
-        "multi": true,
-        "name": "namespace",
-        "options": [],
-        "query": {
-          "query": "label_values(kube_namespace_status_phase{job=\"kube-state-metrics\", cluster=\"$cluster\"}, namespace)",
-          "refId": "Prometheus-namespace-Variable-Query"
-        },
-        "refresh": 2,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
       }
     ]
   },
@@ -925,7 +893,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "API/Services Prod",
+  "title": "API/Services",
   "uid": "d2b4c47c-1353-47c1-a832-ddfca09a865c",
   "version": 1,
   "weekStart": ""

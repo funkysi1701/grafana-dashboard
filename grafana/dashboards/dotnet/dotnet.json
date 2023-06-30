@@ -36,7 +36,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "description": "",
       "fieldConfig": {
@@ -72,7 +72,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -84,7 +84,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "sum(increase(http_request_duration_seconds_bucket[$interval])) by (le)",
           "format": "heatmap",
@@ -131,7 +131,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "description": "",
       "fieldConfig": {
@@ -169,7 +169,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -181,7 +181,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "http_requests_in_progress",
           "format": "time_series",
@@ -227,7 +227,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "description": "",
       "fieldConfig": {
@@ -287,12 +287,12 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "process_start_time_seconds{instance =~ \"$instances\"} * 1000",
           "format": "time_series",
@@ -311,7 +311,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "fieldConfig": {
         "defaults": {
@@ -348,7 +348,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -360,7 +360,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "increase(dotnet_collection_count_total[$interval])",
           "format": "time_series",
@@ -407,7 +407,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "decimals": 0,
       "fieldConfig": {
@@ -444,7 +444,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -456,7 +456,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "dotnet_total_memory_bytes /1024/1024",
           "format": "time_series",
@@ -505,7 +505,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "decimals": 0,
       "description": "",
@@ -543,7 +543,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -555,7 +555,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "process_num_threads",
           "format": "time_series",
@@ -602,7 +602,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "decimals": 0,
       "description": "",
@@ -641,7 +641,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -653,7 +653,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "process_open_handles",
           "format": "time_series",
@@ -701,7 +701,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "$env"
       },
       "decimals": 0,
       "fieldConfig": {
@@ -738,7 +738,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -750,7 +750,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "$env"
           },
           "expr": "process_working_set_bytes /1024/1024",
           "format": "time_series",
@@ -879,20 +879,9 @@
         "type": "interval"
       },
       {
-        "current": {
-          "selected": true,
-          "text": [
-            "projectpyramid.eurosafeuk.co.uk:443",
-            "projectpyramidapi.eurosafeuk.co.uk:443"
-          ],
-          "value": [
-            "projectpyramid.eurosafeuk.co.uk:443",
-            "projectpyramidapi.eurosafeuk.co.uk:443"
-          ]
-        },
         "datasource": {
           "type": "prometheus",
-          "uid": "P20069563C858A330"
+          "uid": "$env"
         },
         "definition": "label_values(http_requests_received_total, instance)",
         "hide": 0,
@@ -913,6 +902,18 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "env",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
       }
     ]
   },
