@@ -130,7 +130,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"total\") FROM \"State OFFLINE\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"total\") FROM \"State OFFLINE\" WHERE  \"type\" = 'Database properties' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -233,7 +233,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State ONLINE\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State ONLINE\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -336,7 +336,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State OFFLINE\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State OFFLINE\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -440,7 +440,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State SUSPECT\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State SUSPECT\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -543,7 +543,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State RECOVERING\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State RECOVERING\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -647,7 +647,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State RECOVERY_PENDING\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State RECOVERY_PENDING\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -751,7 +751,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State RESTORING\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State RESTORING\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1224,7 +1224,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1340,7 +1340,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1456,7 +1456,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1573,7 +1573,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1692,7 +1692,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1822,7 +1822,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2058,7 +2058,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2184,7 +2184,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Backup/Restore Throughput/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Backup/Restore Throughput/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2311,7 +2311,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Memory Grants Pending | Memory Manager\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Memory Grants Pending | Memory Manager\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "B",
           "resultFormat": "time_series",
           "select": [
@@ -2434,7 +2434,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2567,7 +2567,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"Average pending disk IO\") FROM \"Performance metrics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance metrics' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"Average pending disk IO\") FROM \"Performance metrics\" WHERE  \"type\" = 'Performance metrics' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2695,7 +2695,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Page life expectancy | Buffer Manager\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Page life expectancy | Buffer Manager\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2818,7 +2818,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Backup/Restore Throughput/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Backup/Restore Throughput/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2947,7 +2947,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -3068,7 +3068,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"value\" FROM \"Free list stalls/sec | Buffer Manager\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter",
+          "query": "SELECT \"value\" FROM \"Free list stalls/sec | Buffer Manager\" WHERE  \"type\" = 'Performance counters' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -3197,7 +3197,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"Page File Usage (%)\") FROM \"Performance metrics\" WHERE \"servername\" =~ /$Instance$/ AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"Page File Usage (%)\") FROM \"Performance metrics\" WHERE  $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -3330,7 +3330,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"Average pending disk IO\") FROM \"Performance metrics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance metrics' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"Average pending disk IO\") FROM \"Performance metrics\" WHERE  \"type\" = 'Performance metrics' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -3761,7 +3761,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "rawQuery": false,
           "refId": "B",
           "resultFormat": "time_series",
@@ -3829,7 +3829,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Logins/sec | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Logins/sec | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "C",
           "resultFormat": "time_series",
           "select": [
@@ -4032,7 +4032,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"SQL Re-Compilations/sec | SQL Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"SQL Re-Compilations/sec | SQL Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "F",
           "resultFormat": "time_series",
           "select": [
@@ -4099,7 +4099,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Processes blocked | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Processes blocked | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "G",
           "resultFormat": "time_series",
           "select": [
@@ -4256,7 +4256,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "rawQuery": false,
           "refId": "B",
           "resultFormat": "time_series",
@@ -4414,7 +4414,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "rawQuery": false,
           "refId": "B",
           "resultFormat": "time_series",
@@ -4569,7 +4569,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Transactions/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Transactions/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -4636,7 +4636,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Write Transactions/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Write Transactions/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "B",
           "resultFormat": "time_series",
           "select": [
@@ -4703,7 +4703,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Lock Timeouts/sec | _Total | Locks\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Lock Timeouts/sec | _Total | Locks\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "E",
           "resultFormat": "time_series",
           "select": [
@@ -4770,7 +4770,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Number of Deadlocks/sec | _Total | Locks\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Number of Deadlocks/sec | _Total | Locks\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "F",
           "resultFormat": "time_series",
           "select": [
@@ -4837,7 +4837,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Lock Waits/sec | _Total | Locks\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Lock Waits/sec | _Total | Locks\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "G",
           "resultFormat": "time_series",
           "select": [
@@ -4904,7 +4904,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Transactions/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Transactions/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "C",
           "resultFormat": "time_series",
           "select": [
@@ -5058,7 +5058,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Full Scans/sec | Access Methods\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Full Scans/sec | Access Methods\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -5517,7 +5517,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Full Scans/sec | Access Methods\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Full Scans/sec | Access Methods\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6079,7 +6079,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Memory breakdown (%)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Memory clerk' AND $timeFilter",
+          "query": "SELECT * FROM \"Memory breakdown (%)\" WHERE  \"type\" = 'Memory clerk' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6226,7 +6226,7 @@
           "measurement": "sqlserver_memory_clerks",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Memory breakdown (bytes)\" WHERE \"servername\" =~ /$Instance$/ AND $timeFilter",
+          "query": "SELECT * FROM \"Memory breakdown (bytes)\" WHERE  $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6396,7 +6396,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6685,7 +6685,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6980,7 +6980,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7137,7 +7137,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7294,7 +7294,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7450,7 +7450,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7632,7 +7632,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7790,7 +7790,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7948,7 +7948,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -8106,7 +8106,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
