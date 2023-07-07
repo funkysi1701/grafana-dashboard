@@ -117,7 +117,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -130,7 +130,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"total\") FROM \"State OFFLINE\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"total\") FROM \"State OFFLINE\" WHERE  \"type\" = 'Database properties' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -147,13 +147,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            }
-          ]
+          "tags": []
         }
       ],
       "title": "DATABASES HEALTH",
@@ -220,7 +214,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -233,7 +227,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State ONLINE\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State ONLINE\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -250,13 +244,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            }
-          ]
+          "tags": []
         }
       ],
       "title": "ONLINE",
@@ -323,7 +311,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -336,7 +324,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State OFFLINE\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State OFFLINE\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -353,13 +341,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            }
-          ]
+          "tags": []
         }
       ],
       "title": "OFFLINE",
@@ -427,7 +409,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -440,7 +422,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State SUSPECT\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State SUSPECT\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -457,13 +439,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            }
-          ]
+          "tags": []
         }
       ],
       "title": "SUSPECT",
@@ -530,7 +506,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -543,7 +519,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State RECOVERING\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State RECOVERING\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -560,13 +536,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            }
-          ]
+          "tags": []
         }
       ],
       "title": "RECOVERING",
@@ -634,7 +604,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -647,7 +617,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State RECOVERY_PENDING\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State RECOVERY_PENDING\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -664,13 +634,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            }
-          ]
+          "tags": []
         }
       ],
       "title": "PENDING",
@@ -738,7 +702,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -751,7 +715,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"State RESTORING\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"State RESTORING\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -768,13 +732,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            }
-          ]
+          "tags": []
         }
       ],
       "title": "RESTORING",
@@ -826,7 +784,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -921,7 +879,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -1012,7 +970,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -1103,7 +1061,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -1211,7 +1169,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -1224,7 +1182,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1243,12 +1201,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Data File(s) Size (KB)"
@@ -1327,7 +1279,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -1340,7 +1292,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1359,12 +1311,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Log File(s) Size (KB)"
@@ -1443,7 +1389,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -1456,7 +1402,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1475,12 +1421,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Log File(s) Used Size (KB)"
@@ -1560,7 +1500,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -1573,7 +1513,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1594,12 +1534,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Memory broker clerk size"
@@ -1679,7 +1613,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -1692,7 +1626,7 @@
           "measurement": "sqlserver_server_properties",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1709,13 +1643,7 @@
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            }
-          ]
+          "tags": []
         }
       ],
       "title": "CPU Count",
@@ -1809,7 +1737,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "alias": "",
@@ -1822,7 +1750,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database properties' AND $timeFilter",
+          "query": "SELECT \"total\" FROM \"Recovery Model FULL\" WHERE  \"type\" = 'Database properties' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1841,12 +1769,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Total Server Memory (KB)"
@@ -1953,12 +1875,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Used memory (KB)"
@@ -2033,7 +1949,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2058,7 +1974,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2077,12 +1993,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "User Connections"
@@ -2159,7 +2069,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2184,7 +2094,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Backup/Restore Throughput/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Backup/Restore Throughput/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2203,12 +2113,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Buffer cache hit ratio"
@@ -2286,7 +2190,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2311,7 +2215,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Memory Grants Pending | Memory Manager\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Memory Grants Pending | Memory Manager\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "B",
           "resultFormat": "time_series",
           "select": [
@@ -2330,12 +2234,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Memory Grants Pending"
@@ -2409,7 +2307,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2434,7 +2332,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2459,12 +2357,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Checkpoint pages/sec"
@@ -2542,7 +2434,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2567,7 +2459,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"Average pending disk IO\") FROM \"Performance metrics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance metrics' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"Average pending disk IO\") FROM \"Performance metrics\" WHERE  \"type\" = 'Performance metrics' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2586,12 +2478,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Version Store Size (KB)"
@@ -2670,7 +2556,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2695,7 +2581,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Page life expectancy | Buffer Manager\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Page life expectancy | Buffer Manager\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2714,12 +2600,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Page life expectancy"
@@ -2793,7 +2673,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2818,7 +2698,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Backup/Restore Throughput/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Backup/Restore Throughput/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2843,12 +2723,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Backup/Restore Throughput/sec"
@@ -2922,7 +2796,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -2947,7 +2821,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"User Connections | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -2966,12 +2840,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Active Temp Tables"
@@ -3049,7 +2917,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -3068,7 +2936,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT \"value\" FROM \"Free list stalls/sec | Buffer Manager\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter",
+          "query": "SELECT \"value\" FROM \"Free list stalls/sec | Buffer Manager\" WHERE  \"type\" = 'Performance counters' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -3093,12 +2961,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Free list stalls/sec"
@@ -3172,7 +3034,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -3197,7 +3059,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"Page File Usage (%)\") FROM \"Performance metrics\" WHERE \"servername\" =~ /$Instance$/ AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"Page File Usage (%)\") FROM \"Performance metrics\" WHERE  $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -3222,12 +3084,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Page lookups/sec"
@@ -3305,7 +3161,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "targets": [
         {
           "datasource": {
@@ -3330,7 +3186,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"Average pending disk IO\") FROM \"Performance metrics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance metrics' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"Average pending disk IO\") FROM \"Performance metrics\" WHERE  \"type\" = 'Performance metrics' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -3349,12 +3205,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Free Space in tempdb (KB)"
@@ -3479,7 +3329,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"sqlserver_database_io\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"file_type\" = 'ROWS') AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"sqlserver_database_io\" WHERE (\"file_type\" = 'ROWS') AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -3499,12 +3349,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Data File(s) Size (KB)"
@@ -3610,7 +3454,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"sqlserver_database_io\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"file_type\" = 'ROWS') AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"sqlserver_database_io\" WHERE ( \"file_type\" = 'ROWS') AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
@@ -3630,12 +3474,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Log File(s) Size (KB)"
@@ -3704,7 +3542,6 @@
       "hiddenSeries": false,
       "id": 1,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3727,7 +3564,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 5,
       "points": false,
       "renderer": "png",
@@ -3761,7 +3598,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "rawQuery": false,
           "refId": "B",
           "resultFormat": "time_series",
@@ -3787,12 +3624,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Batch Requests/sec"
@@ -3829,7 +3660,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Logins/sec | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Logins/sec | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "C",
           "resultFormat": "time_series",
           "select": [
@@ -3854,12 +3685,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Logins/sec"
@@ -3896,7 +3721,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT difference(last(\"value\")) / ($__interval_ms/1000) FROM \"sqlserver_performance\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"counter\" = 'Logouts/sec') AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT difference(last(\"value\")) / ($__interval_ms/1000) FROM \"sqlserver_performance\" WHERE ( \"counter\" = 'Logouts/sec') AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "D",
           "resultFormat": "time_series",
@@ -3922,12 +3747,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Logouts/sec"
@@ -3964,7 +3783,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT difference(last(\"value\")) / ($__interval_ms/1000) FROM \"sqlserver_performance\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"counter\" = 'SQL Compilations/sec') AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT difference(last(\"value\")) / ($__interval_ms/1000) FROM \"sqlserver_performance\" WHERE ( \"counter\" = 'SQL Compilations/sec') AND $timeFilter GROUP BY time($__interval) fill(null)",
           "rawQuery": false,
           "refId": "E",
           "resultFormat": "time_series",
@@ -3990,12 +3809,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "SQL Compilations/sec"
@@ -4032,7 +3845,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"SQL Re-Compilations/sec | SQL Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"SQL Re-Compilations/sec | SQL Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "F",
           "resultFormat": "time_series",
           "select": [
@@ -4057,12 +3870,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "SQL Re-Compilations/sec"
@@ -4099,7 +3906,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Processes blocked | General Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Processes blocked | General Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "G",
           "resultFormat": "time_series",
           "select": [
@@ -4118,12 +3925,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Processes blocked"
@@ -4193,7 +3994,6 @@
       "hiddenSeries": false,
       "id": 150,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4216,7 +4016,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.5.2",
+      "pluginVersion": "10.0.1",
       "pointradius": 5,
       "points": false,
       "renderer": "png",
@@ -4256,7 +4056,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "rawQuery": false,
           "refId": "B",
           "resultFormat": "time_series",
@@ -4282,12 +4082,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "object",
               "operator": "=",
               "value": "SQLServer:Access Methods"
@@ -4351,7 +4145,6 @@
       "hiddenSeries": false,
       "id": 152,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4414,7 +4207,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Batch Requests/sec | SQL Statistics\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "rawQuery": false,
           "refId": "B",
           "resultFormat": "time_series",
@@ -4440,12 +4233,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=~",
               "value": "/.*Bytes.*/"
@@ -4514,7 +4301,6 @@
       "hiddenSeries": false,
       "id": 3,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4569,7 +4355,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Transactions/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Transactions/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -4594,12 +4380,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Transactions/sec"
@@ -4636,7 +4416,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Write Transactions/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Write Transactions/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "B",
           "resultFormat": "time_series",
           "select": [
@@ -4661,12 +4441,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Write Transactions/sec"
@@ -4703,7 +4477,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Lock Timeouts/sec | _Total | Locks\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Lock Timeouts/sec | _Total | Locks\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "E",
           "resultFormat": "time_series",
           "select": [
@@ -4728,12 +4502,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Lock Timeouts/sec"
@@ -4770,7 +4538,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Number of Deadlocks/sec | _Total | Locks\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Number of Deadlocks/sec | _Total | Locks\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "F",
           "resultFormat": "time_series",
           "select": [
@@ -4795,12 +4563,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Number of Deadlocks/sec"
@@ -4837,7 +4599,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Lock Waits/sec | _Total | Locks\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Lock Waits/sec | _Total | Locks\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "G",
           "resultFormat": "time_series",
           "select": [
@@ -4862,12 +4624,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Lock Waits/sec"
@@ -4904,7 +4660,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Transactions/sec | _Total | Databases\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Transactions/sec | _Total | Databases\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "C",
           "resultFormat": "time_series",
           "select": [
@@ -4929,12 +4685,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Errors/sec"
@@ -5005,7 +4755,6 @@
       "hiddenSeries": false,
       "id": 89,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": false,
         "avg": true,
@@ -5058,7 +4807,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Full Scans/sec | Access Methods\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Full Scans/sec | Access Methods\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -5083,12 +4832,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Log Flushes/sec"
@@ -5160,7 +4903,6 @@
       "hiddenSeries": false,
       "id": 76,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": false,
         "avg": true,
@@ -5234,12 +4976,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Requests completed/sec"
@@ -5307,7 +5043,6 @@
       "hiddenSeries": false,
       "id": 96,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5389,12 +5124,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Transaction Delay"
@@ -5464,7 +5193,6 @@
       "hiddenSeries": false,
       "id": 151,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": false,
         "avg": true,
@@ -5517,7 +5245,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"Full Scans/sec | Access Methods\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
+          "query": "SELECT mean(\"value\") FROM \"Full Scans/sec | Access Methods\" WHERE  \"type\" = 'Performance counters' AND $timeFilter GROUP BY time($interval) fill(null)",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -5536,12 +5264,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "User Connections"
@@ -5607,7 +5329,6 @@
       "hiddenSeries": false,
       "id": 13,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5693,12 +5414,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "wait_category",
               "operator": "=",
               "value": "Tran Log IO"
@@ -5758,12 +5473,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "wait_category",
               "operator": "=",
               "value": "Other Disk IO"
@@ -5832,7 +5541,6 @@
       "hiddenSeries": false,
       "id": 137,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5918,12 +5626,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Errors/sec"
@@ -6016,7 +5718,6 @@
       "hiddenSeries": false,
       "id": 20,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6079,7 +5780,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Memory breakdown (%)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Memory clerk' AND $timeFilter",
+          "query": "SELECT * FROM \"Memory breakdown (%)\" WHERE  \"type\" = 'Memory clerk' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6098,12 +5799,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Used memory (KB)"
@@ -6169,7 +5864,6 @@
       "hiddenSeries": false,
       "id": 22,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6226,7 +5920,7 @@
           "measurement": "sqlserver_memory_clerks",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Memory breakdown (bytes)\" WHERE \"servername\" =~ /$Instance$/ AND $timeFilter",
+          "query": "SELECT * FROM \"Memory breakdown (bytes)\" WHERE  $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6251,12 +5945,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "clerk_type",
               "operator": "=~",
               "value": "/^SQL .*/"
@@ -6345,7 +6033,6 @@
       "hiddenSeries": false,
       "id": 153,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6396,7 +6083,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6415,12 +6102,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Disk Read IO/sec"
@@ -6445,7 +6126,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
+          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE ( \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
           "rawQuery": false,
           "refId": "B",
           "resultFormat": "time_series",
@@ -6465,12 +6146,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Disk Write IO/sec"
@@ -6495,7 +6170,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
+          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE ( \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
           "rawQuery": false,
           "refId": "C",
           "resultFormat": "time_series",
@@ -6515,12 +6190,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Disk Read IO Throttled/sec"
@@ -6545,7 +6214,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
+          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE ( \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
           "rawQuery": false,
           "refId": "D",
           "resultFormat": "time_series",
@@ -6565,12 +6234,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Disk Write IO Throttled/sec"
@@ -6634,7 +6297,6 @@
       "hiddenSeries": false,
       "id": 154,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6685,7 +6347,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -6704,12 +6366,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Disk Read IO/sec"
@@ -6734,7 +6390,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
+          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE ( \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
           "rawQuery": false,
           "refId": "B",
           "resultFormat": "time_series",
@@ -6754,12 +6410,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Disk Write IO/sec"
@@ -6784,7 +6434,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
+          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE ( \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
           "rawQuery": false,
           "refId": "C",
           "resultFormat": "time_series",
@@ -6804,12 +6454,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Disk Read IO Throttled/sec"
@@ -6834,7 +6478,7 @@
           "measurement": "sqlserver_performance",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE (\"sql_instance\" =~ /^$Instance$/ AND \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
+          "query": "SELECT mean(\"value\") FROM \"sqlserver_performance\" WHERE ( \"counter\" = 'Disk Write IO/sec') AND $timeFilter GROUP BY time($__interval)",
           "rawQuery": false,
           "refId": "D",
           "resultFormat": "time_series",
@@ -6854,12 +6498,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Disk Write IO Throttled/sec"
@@ -6923,7 +6561,6 @@
       "hiddenSeries": false,
       "id": 125,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6980,7 +6617,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7005,12 +6642,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "file_type",
               "operator": "=",
               "value": "DATA"
@@ -7080,7 +6711,6 @@
       "hiddenSeries": false,
       "id": 126,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7137,7 +6767,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7162,12 +6792,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "file_type",
               "operator": "=",
               "value": "LOG"
@@ -7237,7 +6861,6 @@
       "hiddenSeries": false,
       "id": 119,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7294,7 +6917,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7319,12 +6942,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "file_type",
               "operator": "=",
               "value": "DATA"
@@ -7393,7 +7010,6 @@
       "hiddenSeries": false,
       "id": 120,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7450,7 +7066,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7475,12 +7091,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "file_type",
               "operator": "=",
               "value": "LOG"
@@ -7575,7 +7185,6 @@
       "hiddenSeries": false,
       "id": 51,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7632,7 +7241,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7657,12 +7266,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "file_type",
               "operator": "=",
               "value": "DATA"
@@ -7733,7 +7336,6 @@
       "hiddenSeries": false,
       "id": 118,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7790,7 +7392,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7815,12 +7417,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "file_type",
               "operator": "=",
               "value": "LOG"
@@ -7891,7 +7487,6 @@
       "hiddenSeries": false,
       "id": 121,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7948,7 +7543,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -7973,12 +7568,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "file_type",
               "operator": "=",
               "value": "DATA"
@@ -8049,7 +7638,6 @@
       "hiddenSeries": false,
       "id": 122,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -8106,7 +7694,7 @@
           "measurement": "sqlserver_database_io",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE \"servername\" =~ /$Instance$/ AND \"type\" = 'Database stats' AND $timeFilter",
+          "query": "SELECT * FROM \"Rows read latency (ms)\" WHERE  \"type\" = 'Database stats' AND $timeFilter",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -8131,12 +7719,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "file_type",
               "operator": "=",
               "value": "LOG"
@@ -8235,7 +7817,6 @@
       "hiddenSeries": false,
       "id": 88,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -8317,12 +7898,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Bytes Sent to Replica/sec"
@@ -8395,7 +7970,6 @@
       "hiddenSeries": false,
       "id": 123,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -8477,12 +8051,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Bytes Received from Replica/sec"
@@ -8555,7 +8123,6 @@
       "hiddenSeries": false,
       "id": 156,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -8637,12 +8204,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Sends to Replica/sec"
@@ -8714,7 +8275,6 @@
       "hiddenSeries": false,
       "id": 155,
       "interval": "10s",
-      "isNew": true,
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -8796,12 +8356,6 @@
           ],
           "tags": [
             {
-              "key": "sql_instance",
-              "operator": "=~",
-              "value": "/^$Instance$/"
-            },
-            {
-              "condition": "AND",
               "key": "counter",
               "operator": "=",
               "value": "Receives from Replica/sec"
@@ -8855,36 +8409,7 @@
     "mssql"
   ],
   "templating": {
-    "list": [
-      {
-        "allFormat": "glob",
-        "current": {
-          "selected": true,
-          "text": "5de97b756da3",
-          "value": "5de97b756da3"
-        },
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P951FEA4DE68E13C5"
-        },
-        "definition": "",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "multiFormat": "glob",
-        "name": "Instance",
-        "options": [],
-        "query": "SHOW TAG VALUES WITH KEY = \"sql_instance\"",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      }
-    ]
+    "list": []
   },
   "time": {
     "from": "now-1h",

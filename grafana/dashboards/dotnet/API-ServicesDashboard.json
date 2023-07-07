@@ -2,6 +2,18 @@
   "annotations": {
     "list": [
       {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      },
+      {
         "datasource": {
           "type": "datasource",
           "uid": "grafana"
@@ -852,6 +864,11 @@
   "templating": {
     "list": [
       {
+        "current": {
+          "selected": true,
+          "text": "projectpyramidapi.eurosafeuk.co.uk",
+          "value": "projectpyramidapi.eurosafeuk.co.uk"
+        },
         "datasource": {
           "type": "prometheus",
           "uid": "${env}"
@@ -873,6 +890,11 @@
         "type": "query"
       },
       {
+        "current": {
+          "selected": true,
+          "text": "PrometheusProd",
+          "value": "PrometheusProd"
+        },
         "hide": 0,
         "includeAll": false,
         "multi": false,
@@ -888,7 +910,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
