@@ -15,4 +15,6 @@ certificates:
 - name: funkysi1701.com
   domains:
   - "*.funkysi1701.com"
+  - foo.funkysi1701.co.uk
+  - boo.funkysi1701.co.uk
   profile: profile    
