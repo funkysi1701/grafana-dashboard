@@ -13,7 +13,7 @@ services:
       - '/:/host:ro,rslave'
       
   prometheus-prod:
-    image: prom/prometheus:v2.45.0
+    image: prom/prometheus:v2.46.0
     container_name: monitoring_prometheus_prod
     ports:
       - 5430:9090
@@ -23,7 +23,7 @@ services:
       - prometheus_data_prod:/prometheus
 
   prometheus-dev:
-    image: prom/prometheus:v2.45.0
+    image: prom/prometheus:v2.46.0
     container_name: monitoring_prometheus_dev
     ports:
       - 5431:9090
@@ -137,7 +137,7 @@ services:
         LETSENCRYPT_HOST: yacht.funkysi1701.com  
 
   grafana:
-    image: grafana/grafana:10.0.2
+    image: grafana/grafana:10.0.3
     container_name: monitoring_grafana
     expose:
       - "3000"
