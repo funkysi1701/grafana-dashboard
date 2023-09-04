@@ -181,14 +181,14 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(round(increase(http_requests_received_total{code=\"400\", host=~\"$url\"}[$__range])))",
+          "expr": "sum(round(increase(http_requests_received_total{code=~\"4\\\\d\\\\d\",host=~\"$url\"}[$__range])))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "HTTP Requests - 400",
+      "title": "HTTP Requests - Error Codes 4XX",
       "type": "stat"
     },
     {
