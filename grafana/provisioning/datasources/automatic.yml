@@ -10,6 +10,11 @@ datasources:
     type: prometheus
     access: proxy
     url: http://server04.local:5431    
+    
+  - name: PrometheusDev
+    type: prometheus
+    access: proxy
+    url: http://server04.local:5433        
 
   - name: InfluxDB
     type: influxdb
