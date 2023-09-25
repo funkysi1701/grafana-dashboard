@@ -39,7 +39,7 @@ services:
       - 5433:9090
     restart: always   
     volumes:
-      - ./prometheus_dev/:/etc/prometheus/
+      - ./prometheus_test/:/etc/prometheus/
       - prometheus_data_test:/prometheus       
       
   mail:
