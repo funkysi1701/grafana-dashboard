@@ -17,7 +17,7 @@ scrape_configs:
       insecure_skip_verify: true 
     scrape_interval: 30s
     static_configs:
-    - targets: ['projectpyramidapi-dev.eurosafeuk.co.uk:443']     
+    - targets: ['projectpyramidapi-test.eurosafeuk.co.uk:443']     
 
   - job_name: 'pyramidui-test'
     scheme: 'https'
@@ -25,4 +25,4 @@ scrape_configs:
       insecure_skip_verify: true 
     scrape_interval: 30s
     static_configs:
-    - targets: ['projectpyramid-dev.eurosafeuk.co.uk:443']   
+    - targets: ['projectpyramid-test.eurosafeuk.co.uk:443']   
