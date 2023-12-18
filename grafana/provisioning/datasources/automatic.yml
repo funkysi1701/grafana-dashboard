@@ -4,22 +4,22 @@ datasources:
   - name: PrometheusProd
     type: prometheus
     access: proxy
-    url: http://server04.local:5430
+    url: http://server05.local:5430
 
   - name: PrometheusDev
     type: prometheus
     access: proxy
-    url: http://server04.local:5431    
+    url: http://server05.local:5431    
     
   - name: PrometheusTest
     type: prometheus
     access: proxy
-    url: http://server04.local:5433        
+    url: http://server05.local:5433        
 
   - name: InfluxDB
     type: influxdb
     access: proxy
-    url: http://server04.local:8086  
+    url: http://server05.local:8086  
     user: admin
     jsonData:
       dbName: influx
