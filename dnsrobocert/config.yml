@@ -14,7 +14,6 @@ profiles:
 certificates:
 - name: funkysi1701.com
   domains:
-  - "*.funkysi1701.com"
-  - foo.funkysi1701.com
-  - boo.funkysi1701.com  
+  - dashboards.funkysi1701.com
+  - grafana.funkysi1701.com  
   profile: profile    
