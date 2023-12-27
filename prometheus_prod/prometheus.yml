@@ -12,7 +12,7 @@ scrape_configs:
     
   - job_name: node
     static_configs:
-    - targets: ['server04.local:9100']
+    - targets: ['server05.local:9100']
     
   - job_name: 'prometheus'
     scrape_interval: 15s
