@@ -180,7 +180,7 @@ groups:
           noDataState: NoData
           execErrState: Error
           for: 5m
-          isPaused: false          
+          isPaused: true          
         - uid: Bcjczc-4c
           title: Pyramid UI Prod Down
           condition: C
