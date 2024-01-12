@@ -56,6 +56,68 @@
   "liveNow": false,
   "panels": [
     {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "$env"
+        },
+        "description": "Total HTTP requests by return code for the selected time range",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 24,
+          "x": 0,
+          "y": 1
+        },
+        "id": 6,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "10.1.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "$env"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum by(code) (round(increase(http_requests_received_total{host=~\"$url\"}[$__range])))",
+            "instant": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "HTTP Requests",
+        "type": "stat"
+    },
+    {
       "datasource": {
         "type": "prometheus",
         "uid": "$env"
