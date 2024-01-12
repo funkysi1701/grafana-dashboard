@@ -339,6 +339,7 @@
       "id": 21,
       "options": {
         "displayMode": "basic",
+        "maxVizHeight": 100,
         "minVizHeight": 10,
         "minVizWidth": 0,
         "orientation": "horizontal",
@@ -405,6 +406,7 @@
       "id": 24,
       "options": {
         "displayMode": "basic",
+        "maxVizHeight": 100,
         "minVizHeight": 10,
         "minVizWidth": 0,
         "orientation": "horizontal",
