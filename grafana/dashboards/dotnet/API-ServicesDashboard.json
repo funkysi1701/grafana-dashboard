@@ -348,7 +348,8 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "showUnfilled": true,
+        "sizing": "manual"
       },
       "pluginVersion": "10.1.1",
       "targets": [
@@ -416,7 +417,7 @@
           "values": false
         },
         "showUnfilled": true,
-        "valueMode": "color"
+        "sizing": "manual"
       },
       "pluginVersion": "10.1.1",
       "targets": [
