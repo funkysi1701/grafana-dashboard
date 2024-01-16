@@ -24,9 +24,7 @@
         "target": {
           "limit": 100,
           "matchAny": false,
-          "tags": [
-            "DevDeployments"
-          ],
+          "tags": ["DevDeployments"],
           "type": "tags"
         }
       },
@@ -41,9 +39,7 @@
         "target": {
           "limit": 100,
           "matchAny": false,
-          "tags": [
-            "LiveDeployments"
-          ],
+          "tags": ["LiveDeployments"],
           "type": "tags"
         }
       }
@@ -60,6 +56,7 @@
         "type": "prometheus",
         "uid": "$env"
       },
+      "description": "Total HTTP requests by return code for the selected time range",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -69,38 +66,29 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
-          "unit": "none"
+          "unit": "short"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 5,
-        "w": 4,
+        "w": 24,
         "x": 0,
         "y": 0
       },
       "id": 6,
       "options": {
-        "colorMode": "none",
-        "graphMode": "none",
+        "colorMode": "value",
+        "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
-        },
-        "text": {
-          "titleSize": 8
         },
         "textMode": "auto"
       },
@@ -113,14 +101,14 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(round(increase(http_requests_received_total{code=~\"2\\\\d\\\\d\",host=~\"$url\"}[$__range])))",
+          "expr": "sum by(code) (round(increase(http_requests_received_total{host=~\"$url\"}[$__range])))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "HTTP Requests - 2XX",
+      "title": "HTTP Requests",
       "type": "stat"
     },
     {
@@ -128,327 +116,7 @@
         "type": "prometheus",
         "uid": "$env"
       },
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 4,
-        "x": 4,
-        "y": 0
-      },
-      "id": 28,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "text": {
-          "titleSize": 8
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "10.1.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "$env"
-          },
-          "editorMode": "code",
-          "exemplar": false,
-          "expr": "sum(round(increase(http_requests_received_total{code=~\"4\\\\d\\\\d\",host=~\"$url\"}[$__range])))",
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "HTTP Requests - Error Codes 4XX",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "$env"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "decimals": 0,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 4,
-        "x": 8,
-        "y": 0
-      },
-      "id": 7,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "10.1.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "$env"
-          },
-          "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"404\", host=~\"$url\"}[$__range])))",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "HTTP Requests - 404",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "$env"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 3,
-        "x": 12,
-        "y": 0
-      },
-      "id": 15,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "10.1.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "$env"
-          },
-          "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"405\", host=~\"$url\"}[$__range])))",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "HTTP Requests - 405",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "$env"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 3,
-        "x": 15,
-        "y": 0
-      },
-      "id": 29,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "10.1.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "$env"
-          },
-          "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"409\", host=~\"$url\"}[$__range])))",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "HTTP Requests - 409",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "$env"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 18,
-        "y": 0
-      },
-      "id": 19,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "10.1.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "$env"
-          },
-          "editorMode": "code",
-          "expr": "sum(round(increase(http_requests_received_total{code=\"500\", host=~\"$url\"}[$__range])))",
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "HTTP Requests - 500",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "$env"
-      },
+      "description": "HTTP Errors",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -484,6 +152,7 @@
               "mode": "off"
             }
           },
+          "decimals": 0,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -510,9 +179,7 @@
       "id": 23,
       "options": {
         "legend": {
-          "calcs": [
-            "sum"
-          ],
+          "calcs": ["sum"],
           "displayMode": "table",
           "placement": "right",
           "showLegend": true,
@@ -531,7 +198,7 @@
             "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum by(code, endpoint, page) (irate(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\",host=~\"$url\"}[$__range]) * 60)",
+          "expr": "sum by(code, endpoint, page) (delta(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\", host=~\"$url\"}[1m])/2)",
           "legendFormat": "{{code}} - {{endpoint}} {{page}}",
           "range": true,
           "refId": "A"
@@ -580,6 +247,7 @@
               "mode": "off"
             }
           },
+          "decimals": 0,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -606,9 +274,7 @@
       "id": 2,
       "options": {
         "legend": {
-          "calcs": [
-            "sum"
-          ],
+          "calcs": ["sum"],
           "displayMode": "table",
           "placement": "right",
           "showLegend": true,
@@ -627,7 +293,7 @@
             "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum by(endpoint, page) (irate(http_requests_received_total{host=~\"$url\"}[1m])) * 60",
+          "expr": "sum by(endpoint, page) (delta(http_requests_received_total{code!~\"4\\\\d\\\\d|5\\\\d\\\\d\",host=~\"$url\"}[1m])/2)",
           "legendFormat": "{{endpoint}} {{page}}",
           "range": true,
           "refId": "A"
@@ -641,6 +307,7 @@
         "type": "prometheus",
         "uid": "$env"
       },
+      "description": "Top 10 slow http endpoints",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -672,18 +339,17 @@
       "id": 21,
       "options": {
         "displayMode": "basic",
+        "maxVizHeight": 100,
         "minVizHeight": 10,
         "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
         "showUnfilled": true,
-        "valueMode": "color"
+        "sizing": "manual"
       },
       "pluginVersion": "10.1.1",
       "targets": [
@@ -709,6 +375,7 @@
         "type": "prometheus",
         "uid": "$env"
       },
+      "description": "Top 10 most requested endpoints",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -740,18 +407,17 @@
       "id": 24,
       "options": {
         "displayMode": "basic",
+        "maxVizHeight": 100,
         "minVizHeight": 10,
         "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
         "showUnfilled": true,
-        "valueMode": "color"
+        "sizing": "manual"
       },
       "pluginVersion": "10.1.1",
       "targets": [
@@ -856,11 +522,7 @@
   "refresh": "30s",
   "schemaVersion": 38,
   "style": "dark",
-  "tags": [
-    "net",
-    ".net",
-    ".net core"
-  ],
+  "tags": ["net", ".net", ".net core"],
   "templating": {
     "list": [
       {

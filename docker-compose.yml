@@ -13,7 +13,7 @@ services:
       - '/:/host:ro,rslave'
       
   prometheus-prod:
-    image: prom/prometheus:v2.48.1
+    image: prom/prometheus:v2.49.1
     container_name: monitoring_prometheus_prod
     ports:
       - 5430:9090
@@ -23,7 +23,7 @@ services:
       - prometheus_data_prod:/prometheus
 
   prometheus-dev:
-    image: prom/prometheus:v2.48.1
+    image: prom/prometheus:v2.49.1
     container_name: monitoring_prometheus_dev
     ports:
       - 5431:9090
@@ -33,7 +33,7 @@ services:
       - prometheus_data_dev:/prometheus   
       
   prometheus-test:
-    image: prom/prometheus:v2.48.1
+    image: prom/prometheus:v2.49.1
     container_name: monitoring_prometheus_test
     ports:
       - 5433:9090
