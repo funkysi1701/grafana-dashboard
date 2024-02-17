@@ -47,7 +47,7 @@ services:
     container_name: monitoring_mail
     environment:
       RELAY_HOST: in-v3.mailjet.com
-      RELAY_PORT: 587
+      RELAY_PORT: 25
       RELAY_USERNAME: 
       RELAY_PASSWORD: 
     restart: always 
