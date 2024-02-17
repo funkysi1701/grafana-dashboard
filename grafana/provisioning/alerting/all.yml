@@ -8,7 +8,7 @@ contactPoints:
       orgId: 1
       type: email
       settings: 
-        addresses: "funkysi1701@gmail.com"
+        addresses: "simon@funkysi1701.com"
 groups:
     - orgId: 1
       name: Pyramid
