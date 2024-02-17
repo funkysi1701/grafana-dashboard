@@ -50,6 +50,7 @@ services:
       RELAY_PORT: 587
       RELAY_USERNAME: 
       RELAY_PASSWORD: 
+      MAILNAME: grafana@ultimatemanager.co.uk
     restart: always 
 
   pihole:
