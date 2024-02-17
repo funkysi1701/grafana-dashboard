@@ -50,7 +50,6 @@ services:
       RELAY_PORT: 587
       RELAY_USERNAME: 
       RELAY_PASSWORD: 
-      MAILNAME: test
     restart: always 
 
   pihole:
