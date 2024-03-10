@@ -1,6 +1,6 @@
 draft: false
 acme:
-  email_account: funkysi1701+letsencrypt7@gmail.com
+  email_account: funkysi1701@gmail.com
   staging: true
   certs_permissions:
     files_mode: 0644
@@ -20,3 +20,11 @@ certificates:
   domains:
   - "dashboards.funkysi1701.com"
   profile: profile      
+- name: helloworld.funkysi1701.com
+  domains:
+  - "helloworld.funkysi1701.com"
+  profile: profile     
+- name: yacht.funkysi1701.com
+  domains:
+  - "yacht.funkysi1701.com"
+  profile: profile     
