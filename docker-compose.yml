@@ -127,7 +127,9 @@ services:
         - /etc/letsencrypt/live/yacht.funkysi1701.com/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
         - /etc/letsencrypt/live/yacht.funkysi1701.com/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key                        
         - /etc/letsencrypt/live/helloworld.funkysi1701.com/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
-        - /etc/letsencrypt/live/helloworld.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key   
+        - /etc/letsencrypt/live/helloworld.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key 
+        - /etc/letsencrypt/live/aspire.funkysi1701.com/fullchain.pem:/etc/nginx/certs/aspire.funkysi1701.com.crt
+        - /etc/letsencrypt/live/aspire.funkysi1701.com/privkey.pem:/etc/nginx/certs/aspire.funkysi1701.com.key           
     logging:
         options:
             max-size: "10m"
@@ -165,9 +167,14 @@ services:
   aspire:
     image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.4
     container_name: monitoring_aspire_dashboard
+    expose:
+      - "18888"
     ports:
       - 18888:18888
       - 18889:18889
+    environment:
+        VIRTUAL_HOST: yacht.funkysi1701.com
+        LETSENCRYPT_HOST: yacht.funkysi1701.com  
 
   hello-world:
     container_name: monitoring_helloworld
