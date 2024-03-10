@@ -1,7 +1,7 @@
 draft: false
 acme:
   email_account: funkysi1701@gmail.com
-  staging: true
+  staging: false
   certs_permissions:
     files_mode: 0644
     dirs_mode: 0755
@@ -15,16 +15,16 @@ certificates:
 - name: dashboards.funkysi1701.com
   domains:
   - "dashboards.funkysi1701.com"
-  profile: profile      
+  profile: profile
 - name: helloworld.funkysi1701.com
   domains:
   - "helloworld.funkysi1701.com"
-  profile: profile     
+  profile: profile
 - name: yacht.funkysi1701.com
   domains:
   - "yacht.funkysi1701.com"
-  profile: profile     
+  profile: profile
 - name: aspire.funkysi1701.com
   domains:
   - "aspire.funkysi1701.com"
-  profile: profile       
+  profile: profile
