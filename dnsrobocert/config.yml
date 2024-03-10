@@ -28,4 +28,5 @@ certificates:
 - name: aspire.funkysi1701.com
   domains:
   - "aspire.funkysi1701.com"
+  - "aspire-dashboard.funkysi1701.com"  
   profile: profile
