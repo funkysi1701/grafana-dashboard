@@ -125,7 +125,7 @@ services:
         - /etc/letsencrypt/live/dashboards.funkysi1701.com/fullchain.pem:/etc/nginx/certs/dashboards.funkysi1701.com.crt
         - /etc/letsencrypt/live/dashboards.funkysi1701.com/privkey.pem:/etc/nginx/certs/dashboards.funkysi1701.com.key                        
     environment:
-      -  TRUST_DOWNSTREAM_PROXY=true               
+      -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
         options:
             max-size: "10m"
