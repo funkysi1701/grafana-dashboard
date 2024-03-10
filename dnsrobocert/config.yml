@@ -1,6 +1,6 @@
 draft: false
 acme:
-  email_account: funkysi1701+letsencrypt5@gmail.com
+  email_account: funkysi1701+letsencrypt6@gmail.com
   staging: true
   certs_permissions:
     files_mode: 0644
