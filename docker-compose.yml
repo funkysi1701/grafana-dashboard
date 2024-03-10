@@ -149,6 +149,8 @@ services:
     container_name: monitoring_grafana
     expose:
       - "3000"
+    ports:
+      - 3000:3000  
     extra_hosts:
       - "host.docker.internal:host-gateway"   
     restart: unless-stopped
