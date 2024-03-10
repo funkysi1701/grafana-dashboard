@@ -15,6 +15,7 @@ certificates:
 - name: dashboards.funkysi1701.com
   domains:
   - "dashboards.funkysi1701.com"
+  - "grafana.funkysi1701.com"
   profile: profile
 - name: helloworld.funkysi1701.com
   domains:
