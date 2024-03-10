@@ -123,9 +123,7 @@ services:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
         - /etc/letsencrypt/live/funkysi1701.com-0002/fullchain.pem:/etc/nginx/certs/dashboards.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0002/privkey.pem:/etc/nginx/certs/dashboards.funkysi1701.com.key
-        - /etc/letsencrypt/live/funkysi1701.com-0002/fullchain.pem:/etc/nginx/certs/aspire.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0002/privkey.pem:/etc/nginx/certs/aspire.funkysi1701.com.key            
+        - /etc/letsencrypt/live/funkysi1701.com-0002/privkey.pem:/etc/nginx/certs/dashboards.funkysi1701.com.key         
         - /etc/letsencrypt/live/funkysi1701.com-0002/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
         - /etc/letsencrypt/live/funkysi1701.com-0002/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key                        
         - /etc/letsencrypt/live/funkysi1701.com-0002/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
@@ -170,9 +168,6 @@ services:
     ports:
       - 18888:18888
       - 18889:18889
-    environment:
-        VIRTUAL_HOST: aspire.funkysi1701.com
-        LETSENCRYPT_HOST: aspire.funkysi1701.com  
 
   hello-world:
     container_name: monitoring_helloworld
