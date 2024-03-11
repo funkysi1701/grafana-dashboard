@@ -101,17 +101,6 @@ services:
     volumes:
       - influxdb_data:/var/lib/influxdb   
 
-  dnsrobocert:
-    image: adferrand/dnsrobocert
-    container_name: monitoring_dnsrobocert
-    environment:
-      - auth_token 
-    volumes:
-    - ./dnsrobocert/config.yml:/etc/dnsrobocert/config.yml
-    - /etc/letsencrypt:/etc/letsencrypt
-    - /etc/dnsrobocert:/etc/dnsrobocert
-    restart: always
-
   nginx:
     container_name: monitoring_nginx
     image: nginxproxy/nginx-proxy
@@ -122,12 +111,12 @@ services:
     volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
-        - /etc/letsencrypt/live/funkysi1701.com-0002/fullchain.pem:/etc/nginx/certs/dashboards.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0002/privkey.pem:/etc/nginx/certs/dashboards.funkysi1701.com.key    
-        - /etc/letsencrypt/live/funkysi1701.com-0002/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0002/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key                        
-        - /etc/letsencrypt/live/funkysi1701.com-0002/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0002/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key   
+        - /etc/letsencrypt/live/helloworld2.funkysi1701.com-0001/fullchain.pem:/etc/nginx/certs/helloworld2.funkysi1701.com.crt
+        - /etc/letsencrypt/live/helloworld2.funkysi1701.com-0001/privkey.pem:/etc/nginx/certs/helloworld2.funkysi1701.com.key  
+        - /etc/letsencrypt/live/dashboards2.funkysi1701.com/fullchain.pem:/etc/nginx/certs/dashboards2.funkysi1701.com.crt
+        - /etc/letsencrypt/live/dashboards2.funkysi1701.com/privkey.pem:/etc/nginx/certs/dashboards2.funkysi1701.com.key                                           
+    environment:
+      -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
         options:
             max-size: "10m"
@@ -151,6 +140,8 @@ services:
     container_name: monitoring_grafana
     expose:
       - "3000"
+    ports:
+      - 3000:3000  
     extra_hosts:
       - "host.docker.internal:host-gateway"   
     restart: unless-stopped
@@ -159,24 +150,31 @@ services:
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
     environment:
-        VIRTUAL_HOST: dashboards.funkysi1701.com
-        LETSENCRYPT_HOST: dashboards.funkysi1701.com     
+        VIRTUAL_HOST: dashboards2.funkysi1701.com
+        LETSENCRYPT_HOST: dashboards2.funkysi1701.com     
 
   aspire:
     image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.4
     container_name: monitoring_aspire_dashboard
+    expose:
+      - "18888"
     ports:
       - 18888:18888
       - 18889:18889
+    environment:
+        VIRTUAL_HOST: aspire2.funkysi1701.com
+        LETSENCRYPT_HOST: aspire2.funkysi1701.com  
 
   hello-world:
     container_name: monitoring_helloworld
     image: kornkitti/express-hello-world
+    ports:
+        - "8080:8080"
     expose:
         - "8080"
     environment:
-        VIRTUAL_HOST: helloworld.funkysi1701.com
-        LETSENCRYPT_HOST: helloworld.funkysi1701.com     
+        VIRTUAL_HOST: helloworld2.funkysi1701.com
+        LETSENCRYPT_HOST: helloworld2.funkysi1701.com     
 
 volumes:
   prometheus_data_dev:
