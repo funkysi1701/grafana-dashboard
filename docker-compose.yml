@@ -161,10 +161,7 @@ services:
     image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.4
     container_name: monitoring_aspire_dashboard
     expose:
-      - "18888:18888"
-    ports:
-      - 18888:18888
-      - 18889:18889
+      - "18888"
     environment:
         VIRTUAL_HOST: aspire.funkysi1701.com
         LETSENCRYPT_HOST: aspire.funkysi1701.com  
