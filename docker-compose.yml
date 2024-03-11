@@ -101,17 +101,6 @@ services:
     volumes:
       - influxdb_data:/var/lib/influxdb   
 
-  dnsrobocert:
-    image: adferrand/dnsrobocert
-    container_name: monitoring_dnsrobocert
-    environment:
-      - auth_token 
-    volumes:
-    - ./dnsrobocert/config.yml:/etc/dnsrobocert/config.yml
-    - /etc/letsencrypt:/etc/letsencrypt
-    - /etc/dnsrobocert:/etc/dnsrobocert
-    restart: always
-
   nginx:
     container_name: monitoring_nginx
     image: nginxproxy/nginx-proxy
