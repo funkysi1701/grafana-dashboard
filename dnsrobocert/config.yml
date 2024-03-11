@@ -12,21 +12,7 @@ profiles:
     auth_token: ${auth_token}
     zoneid: 7f7ed64b3c12075d64b61d0232399026
 certificates:
-- name: dashboards.funkysi1701.com
-  domains:
-  - "dashboards.funkysi1701.com"
-  - "grafana.funkysi1701.com"
-  profile: profile
 - name: helloworld.funkysi1701.com
   domains:
   - "helloworld.funkysi1701.com"
-  profile: profile
-- name: yacht.funkysi1701.com
-  domains:
-  - "yacht.funkysi1701.com"
-  profile: profile
-- name: aspire.funkysi1701.com
-  domains:
-  - "aspire.funkysi1701.com"
-  - "aspire-dashboard.funkysi1701.com"  
   profile: profile
