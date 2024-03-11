@@ -122,8 +122,8 @@ services:
     volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
-        - /etc/letsencrypt/live/helloworld.funkysi1701.com/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
-        - /etc/letsencrypt/live/helloworld.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key                                   
+        - /etc/letsencrypt/live/helloworld2.funkysi1701.com/fullchain.pem:/etc/nginx/certs/helloworld2.funkysi1701.com.crt
+        - /etc/letsencrypt/live/helloworld2.funkysi1701.com/privkey.pem:/etc/nginx/certs/helloworld2.funkysi1701.com.key                                   
     environment:
       -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
@@ -184,8 +184,8 @@ services:
     expose:
         - "8080"
     environment:
-        VIRTUAL_HOST: helloworld.funkysi1701.com
-        LETSENCRYPT_HOST: helloworld.funkysi1701.com     
+        VIRTUAL_HOST: helloworld2.funkysi1701.com
+        LETSENCRYPT_HOST: helloworld2.funkysi1701.com     
 
 volumes:
   prometheus_data_dev:

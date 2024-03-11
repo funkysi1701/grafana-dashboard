@@ -12,7 +12,7 @@ profiles:
     auth_token: ${auth_token}
     zoneid: 7f7ed64b3c12075d64b61d0232399026
 certificates:
-- name: helloworld.funkysi1701.com
+- name: helloworld2.funkysi1701.com
   domains:
-  - "helloworld.funkysi1701.com"
+  - "helloworld2.funkysi1701.com"
   profile: profile
