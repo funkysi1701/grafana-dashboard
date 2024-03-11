@@ -124,8 +124,8 @@ services:
         - /var/docker/nginx/html:/usr/share/nginx/html
         - /etc/letsencrypt/live/helloworld2.funkysi1701.com-0001/fullchain.pem:/etc/nginx/certs/helloworld2.funkysi1701.com.crt
         - /etc/letsencrypt/live/helloworld2.funkysi1701.com-0001/privkey.pem:/etc/nginx/certs/helloworld2.funkysi1701.com.key  
-        - /etc/letsencrypt/live/aspire2.funkysi1701.com-0001/fullchain.pem:/etc/nginx/certs/aspire2.funkysi1701.com.crt
-        - /etc/letsencrypt/live/aspire2.funkysi1701.com-0001/privkey.pem:/etc/nginx/certs/aspire2.funkysi1701.com.key                                           
+        - /etc/letsencrypt/live/aspire2.funkysi1701.com/fullchain.pem:/etc/nginx/certs/aspire2.funkysi1701.com.crt
+        - /etc/letsencrypt/live/aspire2.funkysi1701.com/privkey.pem:/etc/nginx/certs/aspire2.funkysi1701.com.key                                           
     environment:
       -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
