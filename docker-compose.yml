@@ -162,8 +162,6 @@ services:
     container_name: monitoring_aspire_dashboard
     expose:
       - "18888"
-    ports:
-      - 18889:18889
     environment:
         VIRTUAL_HOST: aspire.funkysi1701.com
         LETSENCRYPT_HOST: aspire.funkysi1701.com  
