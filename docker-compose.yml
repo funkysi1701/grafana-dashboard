@@ -124,8 +124,8 @@ services:
         - /var/docker/nginx/html:/usr/share/nginx/html
         - /etc/letsencrypt/live/helloworld2.funkysi1701.com-0001/fullchain.pem:/etc/nginx/certs/helloworld2.funkysi1701.com.crt
         - /etc/letsencrypt/live/helloworld2.funkysi1701.com-0001/privkey.pem:/etc/nginx/certs/helloworld2.funkysi1701.com.key  
-        - /etc/letsencrypt/live/aspire2.funkysi1701.com/fullchain.pem:/etc/nginx/certs/aspire2.funkysi1701.com.crt
-        - /etc/letsencrypt/live/aspire2.funkysi1701.com/privkey.pem:/etc/nginx/certs/aspire2.funkysi1701.com.key                                           
+        - /etc/letsencrypt/live/dashboards2.funkysi1701.com/fullchain.pem:/etc/nginx/certs/dashboards2.funkysi1701.com.crt
+        - /etc/letsencrypt/live/dashboards2.funkysi1701.com/privkey.pem:/etc/nginx/certs/dashboards2.funkysi1701.com.key                                           
     environment:
       -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
@@ -161,8 +161,8 @@ services:
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
     environment:
-        VIRTUAL_HOST: dashboards.funkysi1701.com
-        LETSENCRYPT_HOST: dashboards.funkysi1701.com     
+        VIRTUAL_HOST: dashboards2.funkysi1701.com
+        LETSENCRYPT_HOST: dashboards2.funkysi1701.com     
 
   aspire:
     image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.4
