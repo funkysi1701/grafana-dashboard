@@ -16,3 +16,7 @@ certificates:
   domains:
   - "helloworld2.funkysi1701.com"
   profile: profile
+- name: aspire2.funkysi1701.com
+  domains:
+  - "aspire2.funkysi1701.com"
+  profile: profile  
