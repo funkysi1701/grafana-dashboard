@@ -172,8 +172,6 @@ services:
     ports:
       - 18888:18888
       - 18889:18889
-    extra_hosts:
-      - "host.docker.internal:host-gateway"     
     environment:
         VIRTUAL_HOST: aspire2.funkysi1701.com
         LETSENCRYPT_HOST: aspire2.funkysi1701.com  
