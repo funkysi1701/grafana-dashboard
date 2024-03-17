@@ -16,7 +16,7 @@ scrape_configs:
     tls_config:
       insecure_skip_verify: true 
     scrape_interval: 30s
-    scrape_timeout: 10s
+    scrape_timeout: 25s
     static_configs:
     - targets: ['projectpyramidapi-dev.funkysi1701.com:443']     
 
