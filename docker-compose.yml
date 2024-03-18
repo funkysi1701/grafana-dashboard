@@ -27,6 +27,9 @@ services:
     container_name: monitoring_prometheus_dev
     ports:
       - 5431:9090
+    extra_hosts:
+      - "projectpyramidapi-dev.funkysi1701.com:192.168.2.149"  
+      - "projectpyramid-dev.funkysi1701.com:192.168.2.149"   
     restart: always   
     volumes:
       - ./prometheus_dev/:/etc/prometheus/
