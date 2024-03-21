@@ -140,7 +140,7 @@ services:
         LETSENCRYPT_HOST: yacht.funkysi1701.com  
 
   grafana:
-    image: grafana/grafana:10.4.0
+    image: grafana/grafana:10.4.1
     container_name: monitoring_grafana
     expose:
       - "3000"
