@@ -158,7 +158,7 @@ services:
         LETSENCRYPT_HOST: dashboards.funkysi1701.com     
 
   aspire:
-    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
     container_name: monitoring_aspire_dashboard
     expose:
       - "18888"
