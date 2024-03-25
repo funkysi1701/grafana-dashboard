@@ -568,6 +568,60 @@
         "regex": "",
         "skipUrlSync": false,
         "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "pyramidapi-dev",
+          "value": "pyramidapi-dev"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P53191270F01589AB"
+        },
+        "definition": "label_values(http_server_active_requests,job)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Job",
+        "multi": false,
+        "name": "job",
+        "options": [],
+        "query": {
+          "query": "label_values(http_server_active_requests,job)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "projectpyramidapi-dev.funkysi1701.com:443",
+          "value": "projectpyramidapi-dev.funkysi1701.com:443"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P53191270F01589AB"
+        },
+        "definition": "label_values(http_server_active_requests{job=~\"$job\"},instance)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Instance",
+        "multi": false,
+        "name": "instance",
+        "options": [],
+        "query": {
+          "query": "label_values(http_server_active_requests{job=~\"$job\"},instance)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
       }
     ]
   },
