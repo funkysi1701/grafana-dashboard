@@ -54,7 +54,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "description": "Total HTTP requests by return code for the selected time range",
       "fieldConfig": {
@@ -114,7 +114,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "description": "HTTP Errors",
       "fieldConfig": {
@@ -210,7 +210,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -290,7 +290,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$env"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "expr": "sum by(http_route, page) (delta(http_server_request_duration_seconds_bucket{http_response_status_code!~\"4\\\\d\\\\d|5\\\\d\\\\d\"}[1m])/2)",
@@ -305,7 +305,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "description": "Top 10 slow http endpoints",
       "fieldConfig": {
@@ -356,7 +356,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$env"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -373,7 +373,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "description": "Top 10 most requested endpoints",
       "fieldConfig": {
@@ -441,7 +441,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -503,7 +503,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$env"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -533,7 +533,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "${env}"
+          "uid": "P53191270F01589AB"
         },
         "definition": "label_values(host)",
         "hide": 0,
