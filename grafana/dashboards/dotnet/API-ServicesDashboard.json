@@ -527,50 +527,6 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "projectpyramidapi.eurosafeuk.co.uk",
-          "value": "projectpyramidapi.eurosafeuk.co.uk"
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "P53191270F01589AB"
-        },
-        "definition": "label_values(host)",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "url",
-        "options": [],
-        "query": {
-          "query": "label_values(host)",
-          "refId": "PrometheusVariableQueryEditor-VariableQuery"
-        },
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {
-          "selected": true,
-          "text": "PrometheusProd",
-          "value": "PrometheusProd"
-        },
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "env",
-        "options": [],
-        "query": "prometheus",
-        "queryValue": "",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "type": "datasource"
-      },
-      {
-        "current": {
           "selected": false,
           "text": "pyramidapi-dev",
           "value": "pyramidapi-dev"
