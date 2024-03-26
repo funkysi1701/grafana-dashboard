@@ -23,11 +23,11 @@ groups:
               relativeTimeRange:
                 from: 900
                 to: 0
-              datasourceUid: P20069563C858A330
+              datasourceUid: P53191270F01589AB
               model:
                 datasource:
                     type: prometheus
-                    uid: P20069563C858A330
+                    uid: P53191270F01589AB
                 editorMode: builder
                 exemplar: false
                 expr: up{job="pyramidapi-prod"}
@@ -189,11 +189,11 @@ groups:
               relativeTimeRange:
                 from: 900
                 to: 0
-              datasourceUid: P20069563C858A330
+              datasourceUid: P53191270F01589AB
               model:
                 datasource:
                     type: prometheus
-                    uid: P20069563C858A330
+                    uid: P53191270F01589AB
                 editorMode: builder
                 exemplar: false
                 expr: up{job="pyramidui-prod"}
