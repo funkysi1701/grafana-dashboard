@@ -13,7 +13,7 @@ services:
       - '/:/host:ro,rslave'
       
   prometheus-prod:
-    image: prom/prometheus:v2.50.1
+    image: prom/prometheus:v2.51.1
     container_name: monitoring_prometheus_prod
     ports:
       - 5430:9090
@@ -23,7 +23,7 @@ services:
       - prometheus_data_prod:/prometheus
 
   prometheus-dev:
-    image: prom/prometheus:v2.50.1
+    image: prom/prometheus:v2.51.1
     container_name: monitoring_prometheus_dev
     ports:
       - 5431:9090
@@ -33,7 +33,7 @@ services:
       - prometheus_data_dev:/prometheus   
       
   prometheus-test:
-    image: prom/prometheus:v2.50.1
+    image: prom/prometheus:v2.51.1
     container_name: monitoring_prometheus_test
     ports:
       - 5433:9090
@@ -140,7 +140,7 @@ services:
         LETSENCRYPT_HOST: yacht.funkysi1701.com  
 
   grafana:
-    image: grafana/grafana:10.4.0
+    image: grafana/grafana:10.4.1
     container_name: monitoring_grafana
     expose:
       - "3000"
@@ -158,7 +158,7 @@ services:
         LETSENCRYPT_HOST: dashboards.funkysi1701.com     
 
   aspire:
-    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.4
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
     container_name: monitoring_aspire_dashboard
     expose:
       - "18888"

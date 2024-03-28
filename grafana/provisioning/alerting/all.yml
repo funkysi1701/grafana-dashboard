@@ -23,14 +23,14 @@ groups:
               relativeTimeRange:
                 from: 900
                 to: 0
-              datasourceUid: P20069563C858A330
+              datasourceUid: P53191270F01589AB
               model:
                 datasource:
                     type: prometheus
-                    uid: P20069563C858A330
+                    uid: P53191270F01589AB
                 editorMode: builder
                 exemplar: false
-                expr: up{job="pyramidapi-prod"}
+                expr: scrape_samples_scraped{job="pyramidapi-prod"}
                 format: time_series
                 hide: false
                 instant: false
@@ -113,7 +113,7 @@ groups:
                     uid: P53191270F01589AB
                 editorMode: builder
                 exemplar: false
-                expr: up{job="pyramidapi-dev"}
+                expr: scrape_samples_scraped{job="pyramidapi-dev"}
                 format: time_series
                 hide: false
                 instant: false
@@ -180,7 +180,7 @@ groups:
           noDataState: NoData
           execErrState: Error
           for: 5m
-          isPaused: true          
+          isPaused: false          
         - uid: Bcjczc-4c
           title: Pyramid UI Prod Down
           condition: C
@@ -189,14 +189,14 @@ groups:
               relativeTimeRange:
                 from: 900
                 to: 0
-              datasourceUid: P20069563C858A330
+              datasourceUid: P53191270F01589AB
               model:
                 datasource:
                     type: prometheus
-                    uid: P20069563C858A330
+                    uid: P53191270F01589AB
                 editorMode: builder
                 exemplar: false
-                expr: up{job="pyramidui-prod"}
+                expr: scrape_samples_scraped{job="pyramidui-prod"}
                 format: time_series
                 hide: false
                 instant: false
@@ -279,7 +279,7 @@ groups:
                     uid: P53191270F01589AB
                 editorMode: builder
                 exemplar: false
-                expr: up{job="pyramidui-dev"}
+                expr: scrape_samples_scraped{job="pyramidui-dev"}
                 format: time_series
                 hide: false
                 instant: false
@@ -346,4 +346,4 @@ groups:
           noDataState: NoData
           execErrState: Error
           for: 5m
-          isPaused: true        
+          isPaused: false        
