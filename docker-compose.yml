@@ -170,9 +170,9 @@ services:
   #       VIRTUAL_PORT: "18888"
   #       LETSENCRYPT_HOST: aspire-pyramid-test.funkysi1701.com 
 
-  aspire_pyramid_dev:
+  aspire:
     image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
-    container_name: monitoring_aspire_pyramid_dev_dashboard
+    container_name: monitoring_aspire_dashboard
     expose:
       - "18888"
       - "18889"
