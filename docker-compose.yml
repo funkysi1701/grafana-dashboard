@@ -118,7 +118,9 @@ services:
         - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
         - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key     
         - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.key                                                           
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.key     
+        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.key                                                                   
     environment:
       -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
@@ -157,27 +159,27 @@ services:
         VIRTUAL_HOST: dashboards.funkysi1701.com
         LETSENCRYPT_HOST: dashboards.funkysi1701.com     
 
-  # aspire_pyramid_test:
-  #   image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
-  #   container_name: monitoring_aspire_pyramid_test_dashboard
-  #   expose:
-  #     - "18888"
-  #     - "18889"
-  #   ports:
-  #     - 18889:18889
-  #   environment:
-  #       VIRTUAL_HOST: aspire-pyramid-test.funkysi1701.com
-  #       VIRTUAL_PORT: "18888"
-  #       LETSENCRYPT_HOST: aspire-pyramid-test.funkysi1701.com 
-
-  aspire:
+  aspire_pyramid_test:
     image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
-    container_name: monitoring_aspire_dashboard
+    container_name: monitoring_aspire_pyramid_test_dashboard
     expose:
       - "18888"
       - "18889"
     ports:
       - 18889:18889
+    environment:
+        VIRTUAL_HOST: aspire-pyramid-test.funkysi1701.com
+        VIRTUAL_PORT: "18888"
+        LETSENCRYPT_HOST: aspire-pyramid-test.funkysi1701.com 
+
+  aspire_pyramid_dev:
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
+    container_name: monitoring_aspire_pyramid_dev_dashboard
+    expose:
+      - "18888"
+      - "18890"
+    ports:
+      - 18890:18889
     environment:
         VIRTUAL_HOST: aspire-pyramid-dev.funkysi1701.com
         VIRTUAL_PORT: "18888"
