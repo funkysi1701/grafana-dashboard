@@ -166,6 +166,7 @@ services:
       - "18888"
       - "18889"
     ports:
+      - 18888:18888
       - 18889:18889
     environment:
         VIRTUAL_HOST: aspire-pyramid-test.funkysi1701.com
