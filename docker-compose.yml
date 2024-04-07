@@ -120,7 +120,9 @@ services:
         - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.crt
         - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.key     
         - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.key                                                                   
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.key        
+        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-trekranks.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-trekranks.funkysi1701.com.key                                                                           
     environment:
       -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
@@ -184,6 +186,19 @@ services:
         VIRTUAL_HOST: aspire-pyramid-dev.funkysi1701.com
         VIRTUAL_PORT: "18888"
         LETSENCRYPT_HOST: aspire-pyramid-dev.funkysi1701.com          
+
+  aspire_trekranks:
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
+    container_name: monitoring_aspire_trekranks_dashboard
+    expose:
+      - "18886"
+      - "18891"
+    ports:
+      - 18891:18889
+    environment:
+        VIRTUAL_HOST: aspire-trekranks.funkysi1701.com
+        VIRTUAL_PORT: "18888"
+        LETSENCRYPT_HOST: aspire-trekranks.funkysi1701.com          
 
   hello-world:
     container_name: monitoring_helloworld
