@@ -36,7 +36,7 @@ scrape_configs:
     scrape_interval: 10s
     scrape_timeout: 5s
     static_configs:
-    - targets: ['projectpyramidapi-test.eurosafeuk.co.uk:443']     
+    - targets: ['projectpyramidapi-test.funkysi1701.com:443']     
 
   - job_name: 'pyramidui-test'
     scheme: 'https'
@@ -45,7 +45,7 @@ scrape_configs:
     scrape_interval: 10s
     scrape_timeout: 5s
     static_configs:
-    - targets: ['projectpyramid-test.eurosafeuk.co.uk:443']   
+    - targets: ['projectpyramid-test.funkysi1701.com:443']   
 
   - job_name: 'pyramidapi-prod'
     scheme: 'https'
@@ -54,7 +54,7 @@ scrape_configs:
     scrape_interval: 10s
     scrape_timeout: 5s
     static_configs:
-    - targets: ['projectpyramidapi.eurosafeuk.co.uk:443']    
+    - targets: ['projectpyramidapi.funkysi1701.com:443']    
 
   - job_name: 'pyramidui-prod'
     scheme: 'https'
@@ -63,4 +63,40 @@ scrape_configs:
     scrape_interval: 10s
     scrape_timeout: 5s
     static_configs:
-    - targets: ['projectpyramid.eurosafeuk.co.uk:443']     
+    - targets: ['projectpyramid.funkysi1701.com:443']     
+
+  - job_name: 'pyramidapi-test-live'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    static_configs:
+    - targets: ['projectpyramidapi-test.eurosafeuk.co.uk:443']     
+
+  - job_name: 'pyramidui-test-live'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    static_configs:
+    - targets: ['projectpyramid-test.eurosafeuk.co.uk:443']   
+
+  - job_name: 'pyramidapi-live'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    static_configs:
+    - targets: ['projectpyramidapi.eurosafeuk.co.uk:443']    
+
+  - job_name: 'pyramidui-live'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    static_configs:
+    - targets: ['projectpyramid.eurosafeuk.co.uk:443']         
