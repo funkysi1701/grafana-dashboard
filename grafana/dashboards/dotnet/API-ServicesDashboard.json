@@ -54,7 +54,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "description": "Total HTTP requests by return code for the selected time range",
       "fieldConfig": {
@@ -101,7 +101,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by(code) (round(increase(http_requests_received_total{host=~\"$url\"}[$__range])))",
+          "expr": "sum by(http_response_status_code) (round(increase(http_server_request_duration_seconds_bucket{job=~\"$job\"}[$__range])))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -114,7 +114,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "description": "HTTP Errors",
       "fieldConfig": {
@@ -198,8 +198,8 @@
             "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum by(code, endpoint, page) (delta(http_requests_received_total{code=~\"4\\\\d\\\\d|5\\\\d\\\\d\", host=~\"$url\"}[1m])/2)",
-          "legendFormat": "{{code}} - {{endpoint}} {{page}}",
+          "expr": "sum by(http_response_status_code, http_route, page) (delta(http_server_request_duration_seconds_bucket{http_response_status_code=~\"4\\\\d\\\\d|5\\\\d\\\\d\", job=~\"$job\"}[1m])/2)",
+          "legendFormat": "{{http_response_status_code}} - {{http_route}} {{page}}",
           "range": true,
           "refId": "A"
         }
@@ -210,7 +210,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -290,11 +290,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$env"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
-          "expr": "sum by(endpoint, page) (delta(http_requests_received_total{code!~\"4\\\\d\\\\d|5\\\\d\\\\d\",host=~\"$url\"}[1m])/2)",
-          "legendFormat": "{{endpoint}} {{page}}",
+          "expr": "sum by(http_route, page) (delta(http_server_request_duration_seconds_bucket{http_response_status_code!~\"4\\\\d\\\\d|5\\\\d\\\\d\", job=~\"$job\"}[1m])/2)",
+          "legendFormat": "{{http_route}} {{page}}",
           "range": true,
           "refId": "A"
         }
@@ -305,7 +305,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "description": "Top 10 slow http endpoints",
       "fieldConfig": {
@@ -356,13 +356,13 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$env"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(endpoint, page) (rate(http_request_duration_seconds_count{host=~\"$url\"}[$__range]))))",
+          "expr": "topk(10, (sum by(http_route, page) (rate(http_server_request_duration_seconds_bucket{job=~\"$job\"}[$__range]))))",
           "instant": true,
-          "legendFormat": "{{endpoint}} {{page}}",
+          "legendFormat": "{{http_route}} {{page}}",
           "range": false,
           "refId": "A"
         }
@@ -373,7 +373,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "description": "Top 10 most requested endpoints",
       "fieldConfig": {
@@ -428,9 +428,9 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(endpoint, page) (increase(http_requests_received_total{host=~\"$url\"}[$__range]))))",
+          "expr": "topk(10, (sum by(http_route, page) (increase(http_server_request_duration_seconds_bucket{job=~\"$job\"}[$__range]))))",
           "instant": true,
-          "legendFormat": "{{endpoint}} {{page}}",
+          "legendFormat": "{{http_route}} {{page}}",
           "range": false,
           "refId": "A"
         }
@@ -441,7 +441,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "$env"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -503,11 +503,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$env"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(increase(http_request_duration_seconds_bucket{host=~\"$url\"}[1m])) by(le)",
+          "expr": "sum(increase(http_server_request_duration_seconds_bucket{job=~\"$job\"}[1m])) by(le)",
           "format": "heatmap",
           "instant": false,
           "legendFormat": "__auto",
@@ -527,47 +527,57 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "projectpyramidapi.eurosafeuk.co.uk",
-          "value": "projectpyramidapi.eurosafeuk.co.uk"
+          "selected": false,
+          "text": "pyramidapi-dev",
+          "value": "pyramidapi-dev"
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "${env}"
+          "uid": "P53191270F01589AB"
         },
-        "definition": "label_values(host)",
+        "definition": "label_values(http_server_active_requests,job)",
         "hide": 0,
         "includeAll": false,
+        "label": "Job",
         "multi": false,
-        "name": "url",
+        "name": "job",
         "options": [],
         "query": {
-          "query": "label_values(host)",
+          "query": "label_values(http_server_active_requests,job)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
-        "sort": 0,
+        "sort": 1,
         "type": "query"
       },
       {
         "current": {
-          "selected": true,
-          "text": "PrometheusProd",
-          "value": "PrometheusProd"
+          "selected": false,
+          "text": "projectpyramidapi-dev.funkysi1701.com:443",
+          "value": "projectpyramidapi-dev.funkysi1701.com:443"
         },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P53191270F01589AB"
+        },
+        "definition": "label_values(http_server_active_requests{job=~\"$job\"},instance)",
         "hide": 0,
         "includeAll": false,
+        "label": "Instance",
         "multi": false,
-        "name": "env",
+        "name": "instance",
         "options": [],
-        "query": "prometheus",
-        "queryValue": "",
-        "refresh": 1,
+        "query": {
+          "query": "label_values(http_server_active_requests{job=~\"$job\"},instance)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
-        "type": "datasource"
+        "sort": 1,
+        "type": "query"
       }
     ]
   },

@@ -10,21 +10,3 @@ scrape_configs:
     scrape_interval: 15s
     static_configs:
     - targets: ['prometheus-test:9090']   
-
-  - job_name: 'pyramidapi-test'
-    scheme: 'https'
-    tls_config:
-      insecure_skip_verify: true 
-    scrape_interval: 30s
-    scrape_timeout: 10s
-    static_configs:
-    - targets: ['projectpyramidapi-test.eurosafeuk.co.uk:443']     
-
-  # - job_name: 'pyramidui-test'
-  #   scheme: 'https'
-  #   tls_config:
-  #     insecure_skip_verify: true 
-  #   scrape_interval: 30s
-  #   scrape_timeout: 10s
-  #   static_configs:
-  #   - targets: ['projectpyramid-test.eurosafeuk.co.uk:443']   

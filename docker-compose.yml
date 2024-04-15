@@ -13,7 +13,7 @@ services:
       - '/:/host:ro,rslave'
       
   prometheus-prod:
-    image: prom/prometheus:v2.50.1
+    image: prom/prometheus:v2.51.2
     container_name: monitoring_prometheus_prod
     ports:
       - 5430:9090
@@ -23,7 +23,7 @@ services:
       - prometheus_data_prod:/prometheus
 
   prometheus-dev:
-    image: prom/prometheus:v2.50.1
+    image: prom/prometheus:v2.51.2
     container_name: monitoring_prometheus_dev
     ports:
       - 5431:9090
@@ -33,7 +33,7 @@ services:
       - prometheus_data_dev:/prometheus   
       
   prometheus-test:
-    image: prom/prometheus:v2.50.1
+    image: prom/prometheus:v2.51.2
     container_name: monitoring_prometheus_test
     ports:
       - 5433:9090
@@ -64,7 +64,7 @@ services:
       - 9617:9617
       
   blackbox-exporter:
-    image: prom/blackbox-exporter:v0.24.0
+    image: prom/blackbox-exporter:v0.25.0
     container_name: monitoring_blackbox
     hostname: "blackbox"
     ports:
@@ -117,8 +117,16 @@ services:
         - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/dashboards.funkysi1701.com.key      
         - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
         - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key     
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire.funkysi1701.com.key                                                           
+        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.key     
+        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.key       
+        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-prod.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-prod.funkysi1701.com.key                
+        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-trekranks.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-trekranks.funkysi1701.com.key    
+        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-benchmarks.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-benchmarks.funkysi1701.com.key                                                                                   
     environment:
       -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
@@ -140,7 +148,7 @@ services:
         LETSENCRYPT_HOST: yacht.funkysi1701.com  
 
   grafana:
-    image: grafana/grafana:10.4.0
+    image: grafana/grafana:10.4.2
     container_name: monitoring_grafana
     expose:
       - "3000"
@@ -158,17 +166,69 @@ services:
         LETSENCRYPT_HOST: dashboards.funkysi1701.com     
 
   aspire:
-    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.4
-    container_name: monitoring_aspire_dashboard
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
+    container_name: monitoring_aspire_pyramid_test_dashboard
     expose:
       - "18888"
       - "18889"
     ports:
       - 18889:18889
     environment:
-        VIRTUAL_HOST: aspire.funkysi1701.com
+        VIRTUAL_HOST: aspire-pyramid-test.funkysi1701.com
         VIRTUAL_PORT: "18888"
-        LETSENCRYPT_HOST: aspire.funkysi1701.com  
+        LETSENCRYPT_HOST: aspire-pyramid-test.funkysi1701.com 
+
+  aspire_pyramid_dev:
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
+    container_name: monitoring_aspire_pyramid_dev_dashboard
+    expose:
+      - "18887"
+      - "18890"
+    ports:
+      - 18890:18889
+    environment:
+        VIRTUAL_HOST: aspire-pyramid-dev.funkysi1701.com
+        VIRTUAL_PORT: "18888"
+        LETSENCRYPT_HOST: aspire-pyramid-dev.funkysi1701.com          
+
+  aspire_trekranks:
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
+    container_name: monitoring_aspire_trekranks_dashboard
+    expose:
+      - "18886"
+      - "18891"
+    ports:
+      - 18891:18889
+    environment:
+        VIRTUAL_HOST: aspire-trekranks.funkysi1701.com
+        VIRTUAL_PORT: "18888"
+        LETSENCRYPT_HOST: aspire-trekranks.funkysi1701.com     
+
+  aspire_benchmarks:
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
+    container_name: monitoring_aspire_benchmarks_dashboard
+    expose:
+      - "18885"
+      - "18892"
+    ports:
+      - 18892:18889
+    environment:
+        VIRTUAL_HOST: aspire-benchmarks.funkysi1701.com
+        VIRTUAL_PORT: "18888"
+        LETSENCRYPT_HOST: aspire-benchmarks.funkysi1701.com     
+
+  aspire_pyramid_prod:
+    image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
+    container_name: monitoring_aspire_pyramid_prod_dashboard
+    expose:
+      - "18884"
+      - "18893"
+    ports:
+      - 18893:18889
+    environment:
+        VIRTUAL_HOST: aspire-pyramid-prod.funkysi1701.com
+        VIRTUAL_PORT: "18888"
+        LETSENCRYPT_HOST: aspire-pyramid-prod.funkysi1701.com      
 
   hello-world:
     container_name: monitoring_helloworld
