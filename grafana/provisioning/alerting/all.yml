@@ -97,7 +97,7 @@ groups:
           noDataState: NoData
           execErrState: Error
           for: 5m
-          isPaused: false
+          isPaused: true
         - uid: Bcjczc-4b
           title: Pyramid API Dev Down
           condition: C
@@ -180,7 +180,7 @@ groups:
           noDataState: NoData
           execErrState: Error
           for: 5m
-          isPaused: false          
+          isPaused: true          
         - uid: Bcjczc-4c
           title: Pyramid UI Prod Down
           condition: C
@@ -263,7 +263,7 @@ groups:
           noDataState: NoData
           execErrState: Error
           for: 5m
-          isPaused: false
+          isPaused: true
         - uid: Bcjczc-4d
           title: Pyramid UI Dev Down
           condition: C
@@ -346,4 +346,4 @@ groups:
           noDataState: NoData
           execErrState: Error
           for: 5m
-          isPaused: false        
+          isPaused: true        
