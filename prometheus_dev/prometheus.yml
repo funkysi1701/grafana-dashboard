@@ -45,4 +45,13 @@ scrape_configs:
     scrape_interval: 10s
     scrape_timeout: 5s
     static_configs:
-    - targets: ['projectpyramidapi-test.eurosafeuk.co.uk:443']       
+    - targets: ['projectpyramidapi-test.eurosafeuk.co.uk:443']   
+
+  - job_name: 'pyramidapi-live'
+    scheme: 'https'
+    tls_config:
+      insecure_skip_verify: true 
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    static_configs:
+    - targets: ['projectpyramidapi.eurosafeuk.co.uk:443']            
