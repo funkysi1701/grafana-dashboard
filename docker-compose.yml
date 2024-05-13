@@ -32,16 +32,6 @@ services:
       - ./prometheus_dev/:/etc/prometheus/
       - prometheus_data_dev:/prometheus   
       
-  prometheus-test:
-    image: prom/prometheus:v2.52.0
-    container_name: monitoring_prometheus_test
-    ports:
-      - 5433:9090
-    restart: always   
-    volumes:
-      - ./prometheus_test/:/etc/prometheus/
-      - prometheus_data_test:/prometheus       
-      
   mail:
     image: bytemark/smtp
     container_name: monitoring_mail
