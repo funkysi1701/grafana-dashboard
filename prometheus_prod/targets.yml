@@ -1,7 +1,5 @@
 - targets:
 
-  - https://projectpyramid.eurosafeuk.co.uk/metrics
-  - https://projectpyramidapi.eurosafeuk.co.uk/metrics
   - https://pq.ssipassessors.com
   - https://pqapi.ssipassessors.com
   - https://www.ssipassessors.com
