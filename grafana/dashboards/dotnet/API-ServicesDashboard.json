@@ -579,7 +579,7 @@
       "type": "heatmap"
     }
   ],
-  "refresh": "auto",
+  "refresh": "30s",
   "schemaVersion": 39,
   "tags": [
     "net",
@@ -591,8 +591,8 @@
       {
         "current": {
           "selected": false,
-          "text": "pyramidapi-test",
-          "value": "pyramidapi-test"
+          "text": "pyramidapi-dev",
+          "value": "pyramidapi-dev"
         },
         "datasource": {
           "type": "prometheus",
@@ -618,8 +618,8 @@
       {
         "current": {
           "selected": false,
-          "text": "projectpyramidapi-test.funkysi1701.com:443",
-          "value": "projectpyramidapi-test.funkysi1701.com:443"
+          "text": "projectpyramidapi-dev.funkysi1701.com:443",
+          "value": "projectpyramidapi-dev.funkysi1701.com:443"
         },
         "datasource": {
           "type": "prometheus",
@@ -645,7 +645,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-24h",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,
