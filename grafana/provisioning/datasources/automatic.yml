@@ -11,11 +11,6 @@ datasources:
     access: proxy
     url: http://server05.local:5431    
     
-  - name: PrometheusTest
-    type: prometheus
-    access: proxy
-    url: http://server05.local:5433        
-
   - name: InfluxDB
     type: influxdb
     access: proxy
