@@ -53,7 +53,7 @@
           "uid": "grafana"
         },
         "enable": true,
-        "iconColor": "red",
+        "iconColor": "green",
         "name": "TestDeployments",
         "target": {
           "refId": "Anno",
@@ -69,7 +69,7 @@
           "uid": "grafana"
         },
         "enable": true,
-        "iconColor": "red",
+        "iconColor": "yellow",
         "name": "ProdDeployments",
         "target": {
           "refId": "Anno",
