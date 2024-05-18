@@ -151,7 +151,6 @@ services:
       - ./grafana/etcs:/etc/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
-      - grafana:/var/lib/grafana
     environment:
         VIRTUAL_HOST: dashboards.funkysi1701.com
         LETSENCRYPT_HOST: dashboards.funkysi1701.com     
