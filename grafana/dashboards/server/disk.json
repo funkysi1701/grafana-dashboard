@@ -24,7 +24,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -75,7 +75,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "builder",
           "expr": "node_filesystem_free_bytes{device=\"/dev/mapper/ubuntu--vg-ubuntu--lv\"}",
@@ -90,7 +90,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -193,7 +193,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "builder",
           "expr": "windows_logical_disk_free_bytes",
@@ -204,7 +204,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "expr": "node_filesystem_free_bytes",
@@ -220,7 +220,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -275,7 +275,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "expr": "time() - node_boot_time_seconds",
@@ -290,7 +290,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -340,7 +340,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "builder",
           "expr": "node_memory_MemFree_bytes",
@@ -355,7 +355,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -405,7 +405,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "builder",
           "expr": "windows_logical_disk_free_bytes{volume=\"C:\"}",
@@ -420,7 +420,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -475,7 +475,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "expr": "time() - windows_system_system_up_time ",
@@ -490,7 +490,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -540,7 +540,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "builder",
           "expr": "windows_os_physical_memory_free_bytes",
@@ -555,7 +555,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -636,7 +636,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "builder",
           "expr": "windows_os_physical_memory_free_bytes",
@@ -647,7 +647,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "builder",
           "expr": "node_memory_MemFree_bytes",
