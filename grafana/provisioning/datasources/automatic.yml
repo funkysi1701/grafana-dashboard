@@ -1,11 +1,6 @@
 apiVersion: 1
 
 datasources:
-  - name: PrometheusProd
-    type: prometheus
-    access: proxy
-    url: http://server05.local:5430
-
   - name: PrometheusDev
     type: prometheus
     access: proxy
