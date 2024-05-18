@@ -11,16 +11,6 @@ services:
     restart: unless-stopped
     volumes:
       - '/:/host:ro,rslave'
-      
-  prometheus-prod:
-    image: prom/prometheus:v2.52.0
-    container_name: monitoring_prometheus_prod
-    ports:
-      - 5430:9090
-    restart: always   
-    volumes:
-      - ./prometheus_prod/:/etc/prometheus/
-      - prometheus_data_prod:/prometheus
 
   prometheus-dev:
     image: prom/prometheus:v2.52.0
@@ -151,7 +141,7 @@ services:
       - ./grafana/etcs:/etc/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
-      - grafana2:/var/lib/grafana
+      - grafana3:/var/lib/grafana
     environment:
         VIRTUAL_HOST: dashboards.funkysi1701.com
         LETSENCRYPT_HOST: dashboards.funkysi1701.com     
@@ -234,8 +224,6 @@ services:
 
 volumes:
   prometheus_data_dev:
-  prometheus_data_test:
-  prometheus_data_prod:
-  grafana2:
+  grafana3:
   yacht:
   influxdb_data:

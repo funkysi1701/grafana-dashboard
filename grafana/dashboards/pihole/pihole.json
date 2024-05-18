@@ -28,7 +28,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "gridPos": {
         "h": 1,
@@ -42,7 +42,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "refId": "A"
         }
@@ -53,7 +53,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -122,7 +122,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_status",
           "format": "time_series",
@@ -138,7 +138,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -201,7 +201,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_domains_being_blocked",
           "format": "time_series",
@@ -216,7 +216,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -279,7 +279,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_unique_domains",
           "format": "time_series",
@@ -300,7 +300,7 @@
       },
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fontSize": "80%",
       "format": "short",
@@ -326,7 +326,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_top_queries",
           "format": "time_series",
@@ -349,7 +349,7 @@
       },
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fontSize": "80%",
       "format": "short",
@@ -376,7 +376,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_reply",
           "format": "time_series",
@@ -399,7 +399,7 @@
       },
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fontSize": "80%",
       "format": "short",
@@ -424,7 +424,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_top_ads",
           "format": "time_series",
@@ -447,7 +447,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -488,7 +488,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_dns_queries_all_types",
           "format": "time_series",
@@ -531,7 +531,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -591,7 +591,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_ads_percentage_today",
           "format": "time_series",
@@ -613,7 +613,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -655,7 +655,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_ads_blocked_today",
           "format": "time_series",
@@ -702,7 +702,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -743,7 +743,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_queries_cached",
           "format": "time_series",
@@ -754,7 +754,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_queries_forwarded",
           "format": "time_series",
@@ -801,7 +801,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -842,7 +842,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_querytypes",
           "format": "time_series",
@@ -853,7 +853,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "",
           "format": "time_series",
@@ -901,7 +901,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -942,7 +942,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_ads_percentage_today",
           "format": "time_series",
@@ -986,7 +986,7 @@
       "columns": [],
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fontSize": "100%",
       "gridPos": {
@@ -1026,7 +1026,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_top_queries",
           "format": "time_series",
@@ -1046,7 +1046,7 @@
       "columns": [],
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fontSize": "100%",
       "gridPos": {
@@ -1090,7 +1090,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_top_ads",
           "format": "time_series",
@@ -1111,7 +1111,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -1152,7 +1152,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_forward_destinations",
           "format": "time_series",
@@ -1202,7 +1202,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fill": 1,
       "fillGradient": 0,
@@ -1243,7 +1243,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "expr": "pihole_unique_clients",
           "format": "time_series",
@@ -1287,7 +1287,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "P20069563C858A330"
+        "uid": "P53191270F01589AB"
       },
       "fieldConfig": {
         "defaults": {
@@ -1336,7 +1336,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P20069563C858A330"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "builder",
           "expr": "pihole_top_sources",
