@@ -151,7 +151,7 @@ services:
       - ./grafana/etcs:/etc/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
-      - grafana:/var/lib/grafana
+      - grafana2:/var/lib/grafana
     environment:
         VIRTUAL_HOST: dashboards.funkysi1701.com
         LETSENCRYPT_HOST: dashboards.funkysi1701.com     
@@ -236,6 +236,6 @@ volumes:
   prometheus_data_dev:
   prometheus_data_test:
   prometheus_data_prod:
-  grafana:
+  grafana2:
   yacht:
   influxdb_data:
