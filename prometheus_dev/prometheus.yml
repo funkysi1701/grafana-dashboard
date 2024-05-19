@@ -92,7 +92,7 @@ scrape_configs:
 
   - job_name: windows
     static_configs:
-    - targets: ['192.168.2.150:9182']
+    - targets: ['192.168.2.149:9182']
     
   - job_name: node
     static_configs:
