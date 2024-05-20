@@ -91,22 +91,22 @@ services:
     volumes:
         - /var/run/docker.sock:/tmp/docker.sock:ro
         - /var/docker/nginx/html:/usr/share/nginx/html
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key  
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/dashboards.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/dashboards.funkysi1701.com.key      
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key     
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.key     
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.key       
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-pyramid-prod.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-pyramid-prod.funkysi1701.com.key                
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-trekranks.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-trekranks.funkysi1701.com.key    
-        - /etc/letsencrypt/live/funkysi1701.com-0008/fullchain.pem:/etc/nginx/certs/aspire-benchmarks.funkysi1701.com.crt
-        - /etc/letsencrypt/live/funkysi1701.com-0008/privkey.pem:/etc/nginx/certs/aspire-benchmarks.funkysi1701.com.key                                                                                   
+        - /etc/letsencrypt/live/funkysi1701.com-0023/fullchain.pem:/etc/nginx/certs/helloworld.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0023/privkey.pem:/etc/nginx/certs/helloworld.funkysi1701.com.key  
+        - /etc/letsencrypt/live/funkysi1701.com-0023/fullchain.pem:/etc/nginx/certs/dashboards.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0023/privkey.pem:/etc/nginx/certs/dashboards.funkysi1701.com.key      
+        - /etc/letsencrypt/live/funkysi1701.com-0023/fullchain.pem:/etc/nginx/certs/yacht.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0023/privkey.pem:/etc/nginx/certs/yacht.funkysi1701.com.key     
+        - /etc/letsencrypt/live/funkysi1701.com-0023/fullchain.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0023/privkey.pem:/etc/nginx/certs/aspire-pyramid-dev.funkysi1701.com.key     
+        - /etc/letsencrypt/live/funkysi1701.com-0023/fullchain.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0023/privkey.pem:/etc/nginx/certs/aspire-pyramid-test.funkysi1701.com.key       
+        - /etc/letsencrypt/live/funkysi1701.com-0023/fullchain.pem:/etc/nginx/certs/aspire-pyramid-prod.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0023/privkey.pem:/etc/nginx/certs/aspire-pyramid-prod.funkysi1701.com.key                
+        - /etc/letsencrypt/live/funkysi1701.com-0023/fullchain.pem:/etc/nginx/certs/aspire-trekranks.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0023/privkey.pem:/etc/nginx/certs/aspire-trekranks.funkysi1701.com.key    
+        - /etc/letsencrypt/live/funkysi1701.com-0023/fullchain.pem:/etc/nginx/certs/aspire-benchmarks.funkysi1701.com.crt
+        - /etc/letsencrypt/live/funkysi1701.com-0023/privkey.pem:/etc/nginx/certs/aspire-benchmarks.funkysi1701.com.key                                                                                   
     environment:
       -  TRUST_DOWNSTREAM_PROXY=false               
     logging:
