@@ -36,23 +36,6 @@
           "uid": "grafana"
         },
         "enable": true,
-        "iconColor": "blue",
-        "name": "LiveDeployments",
-        "target": {
-          "limit": 100,
-          "matchAny": false,
-          "tags": [
-            "LiveDeployments"
-          ],
-          "type": "tags"
-        }
-      },
-      {
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
-        "enable": true,
         "iconColor": "green",
         "name": "TestDeployments",
         "target": {
@@ -75,6 +58,23 @@
           "refId": "Anno",
           "tags": [
             "ProdDeployments"
+          ],
+          "type": "tags"
+        }
+      },
+      {
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "iconColor": "blue",
+        "name": "LiveDeployments",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [
+            "LiveDeployments"
           ],
           "type": "tags"
         }
