@@ -90,10 +90,10 @@ scrape_configs:
       - target_label: __address__
         replacement: blackbox-exporter:9115         
 
-  - job_name: windows
+  - job_name: server01
     static_configs:
-    - targets: ['192.168.2.150:9182']
+    - targets: ['server01.local:9182']
     
-  - job_name: node
+  - job_name: server05
     static_configs:
     - targets: ['server05.local:9100']        
