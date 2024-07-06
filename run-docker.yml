@@ -18,7 +18,7 @@ steps:
     displayName: "Docker Compose Build"
   - script: docker-compose -p "monitoring" down
     displayName: "Docker Compose Down"
-  - script: docker-compose -p "monitoring" up -d --remove-orphans --build-arg PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN) --build-arg PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME) --build-arg RELAY_USERNAME=$(RELAY_USERNAME) --build-arg RELAY_PASSWORD=$(RELAY_PASSWORD)
+  - script: docker-compose -p "monitoring" up -d --remove-orphans
     displayName: "Docker Compose Up"
   - script: docker system prune -f
     displayName: "Docker prune"
