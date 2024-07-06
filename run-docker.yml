@@ -27,20 +27,20 @@ steps:
 #     projectName: 'monitoring'
 #     action: 'Run a Docker Compose command'
 #     dockerComposeCommand: 'build'
-- task: DockerCompose@0
-  displayName: DockerCompose Down
-  inputs:
-    containerregistrytype: 'Container Registry'
-    dockerComposeFile: 'docker-compose.yml'
-    dockerComposeFileArgs: |
-      PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)
-      PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME)
-      RELAY_USERNAME=$(RELAY_USERNAME)
-      RELAY_PASSWORD=$(RELAY_PASSWORD)
-    projectName: 'monitoring'
-    action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'down'
-    arguments: '--remove-orphans'
+# - task: DockerCompose@0
+#   displayName: DockerCompose Down
+#   inputs:
+#     containerregistrytype: 'Container Registry'
+#     dockerComposeFile: 'docker-compose.yml'
+#     dockerComposeFileArgs: |
+#       PIHOLE_API_TOKEN=$(PIHOLE_API_TOKEN)
+#       PIHOLE_HOSTNAME=$(PIHOLE_HOSTNAME)
+#       RELAY_USERNAME=$(RELAY_USERNAME)
+#       RELAY_PASSWORD=$(RELAY_PASSWORD)
+#     projectName: 'monitoring'
+#     action: 'Run a Docker Compose command'
+#     dockerComposeCommand: 'down'
+#     arguments: '--remove-orphans'
 - task: DockerCompose@0
   displayName: DockerCompose Up
   inputs:
