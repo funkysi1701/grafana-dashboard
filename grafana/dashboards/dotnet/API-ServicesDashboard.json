@@ -141,7 +141,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by(http_response_status_code) (round(increase(http_server_request_duration_seconds_bucket{job=~\"$job\"}[$__range])))",
+          "expr": "sum by(http_response_status_code) (round(increase(http_server_request_duration_seconds_bucket{job=~\"$job\",http_route!=\"/metrics\"}[$__range])))",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -243,7 +243,7 @@
             "uid": "$env"
           },
           "editorMode": "code",
-          "expr": "sum by(http_response_status_code, http_route, page) (delta(http_server_request_duration_seconds_bucket{http_response_status_code=~\"4\\\\d\\\\d|5\\\\d\\\\d\", job=~\"$job\"}[1m])/2)",
+          "expr": "sum by(http_response_status_code, http_route, page) (delta(http_server_request_duration_seconds_bucket{http_response_status_code=~\"4\\\\d\\\\d|5\\\\d\\\\d\", job=~\"$job\",http_route!=\"/metrics\"}[1m])/2)",
           "legendFormat": "{{http_response_status_code}} - {{http_route}} {{page}}",
           "range": true,
           "refId": "A"
@@ -343,7 +343,7 @@
             "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
-          "expr": "sum by(http_route, page) (delta(http_server_request_duration_seconds_bucket{http_response_status_code!~\"4\\\\d\\\\d|5\\\\d\\\\d\", job=~\"$job\"}[1m])/2)",
+          "expr": "sum by(http_route, page) (delta(http_server_request_duration_seconds_bucket{http_response_status_code!~\"4\\\\d\\\\d|5\\\\d\\\\d\", job=~\"$job\",http_route!=\"/metrics\"}[1m])/2)",
           "legendFormat": "{{http_route}} {{page}}",
           "range": true,
           "refId": "A"
@@ -414,7 +414,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(http_route, page) (rate(http_server_request_duration_seconds_bucket{job=~\"$job\"}[$__range]))))",
+          "expr": "topk(10, (sum by(http_route, page) (rate(http_server_request_duration_seconds_bucket{job=~\"$job\",http_route!=\"/metrics\"}[$__range]))))",
           "instant": true,
           "legendFormat": "{{http_route}} {{page}}",
           "range": false,
@@ -486,7 +486,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "topk(10, (sum by(http_route, page) (increase(http_server_request_duration_seconds_bucket{job=~\"$job\"}[$__range]))))",
+          "expr": "topk(10, (sum by(http_route, page) (increase(http_server_request_duration_seconds_bucket{job=~\"$job\",http_route!=\"/metrics\"}[$__range]))))",
           "instant": true,
           "legendFormat": "{{http_route}} {{page}}",
           "range": false,
@@ -567,7 +567,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum(increase(http_server_request_duration_seconds_bucket{job=~\"$job\"}[1m])) by(le)",
+          "expr": "sum(increase(http_server_request_duration_seconds_bucket{job=~\"$job\",http_route!=\"/metrics\"}[1m])) by(le)",
           "format": "heatmap",
           "instant": false,
           "legendFormat": "__auto",
