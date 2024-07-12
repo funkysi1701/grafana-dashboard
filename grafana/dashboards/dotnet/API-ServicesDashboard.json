@@ -84,7 +84,38 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "links": [],
+  "links": [
+    {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": true,
+        "keepTime": true,
+        "tags": [
+          "aspnetcore",
+          "opentelemetry"
+        ],
+        "targetBlank": false,
+        "title": "ASP .NET",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      },
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": true,
+        "keepTime": true,
+        "tags": [
+          "aspnetcore",
+          "endpoints"
+        ],
+        "targetBlank": false,
+        "title": "Endpoints",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      }
+  ],
   "liveNow": false,
   "panels": [
     {
