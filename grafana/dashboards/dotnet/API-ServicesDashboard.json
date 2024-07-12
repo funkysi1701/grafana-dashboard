@@ -167,7 +167,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "$env"
+            "uid": "P53191270F01589AB"
           },
           "editorMode": "code",
           "exemplar": false,
