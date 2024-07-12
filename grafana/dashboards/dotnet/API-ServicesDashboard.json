@@ -76,6 +76,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
+  "id": 6,
   "links": [
     {
       "asDropdown": false,
@@ -151,6 +152,7 @@
         "graphMode": "area",
         "justifyMode": "auto",
         "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": ["lastNotNull"],
           "fields": "",
@@ -160,7 +162,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.1.0",
       "targets": [
         {
           "datasource": {
@@ -282,7 +284,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 6
       },
       "id": 90,
       "options": {
@@ -303,7 +305,7 @@
           }
         ]
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.1.0",
       "targets": [
         {
           "datasource": {
@@ -467,7 +469,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 13
       },
       "id": 23,
       "options": {
@@ -565,7 +567,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 22
       },
       "id": 2,
       "options": {
@@ -631,7 +633,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 23
+        "y": 31
       },
       "id": 21,
       "options": {
@@ -650,7 +652,7 @@
         "sizing": "manual",
         "valueMode": "color"
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.1.0",
       "targets": [
         {
           "datasource": {
@@ -701,7 +703,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 23
+        "y": 31
       },
       "id": 24,
       "options": {
@@ -720,7 +722,7 @@
         "sizing": "manual",
         "valueMode": "color"
       },
-      "pluginVersion": "11.0.0",
+      "pluginVersion": "11.1.0",
       "targets": [
         {
           "datasource": {
@@ -763,7 +765,7 @@
         "h": 12,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 40
       },
       "id": 27,
       "options": {
@@ -865,6 +867,6 @@
   "timezone": "",
   "title": "API/Services",
   "uid": "d2b4c47c-1353-47c1-a832-ddfca09a865c",
-  "version": 1,
+  "version": 8,
   "weekStart": ""
 }
