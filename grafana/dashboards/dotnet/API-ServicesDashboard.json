@@ -119,6 +119,19 @@
   "liveNow": false,
   "panels": [
     {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 35,
+        "panels": [],
+        "title": "HTTP Requests",
+        "type": "row"
+    },
+    {
       "datasource": {
         "type": "prometheus",
         "uid": "P53191270F01589AB"
@@ -144,7 +157,7 @@
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 1
       },
       "id": 6,
       "options": {
@@ -174,7 +187,7 @@
           "exemplar": false,
           "expr": "sum by(http_response_status_code) (round(increase(http_server_request_duration_seconds_bucket{job=~\"$job\",http_route!=\"/metrics\"}[$__range])))",
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{http_response_status_code}}",
           "range": true,
           "refId": "A"
         }
