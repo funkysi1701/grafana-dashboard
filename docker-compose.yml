@@ -147,7 +147,7 @@ services:
         LETSENCRYPT_HOST: dashboards.funkysi1701.com     
 
   aspire:
-    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.0.2
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.1.0
     container_name: monitoring_aspire_pyramid_test_dashboard
     expose:
       - "18888"
@@ -160,7 +160,7 @@ services:
         LETSENCRYPT_HOST: aspire-pyramid-test.funkysi1701.com 
 
   aspire_pyramid_dev:
-    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.0.2
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.1.0
     container_name: monitoring_aspire_pyramid_dev_dashboard
     expose:
       - "18887"
@@ -173,7 +173,7 @@ services:
         LETSENCRYPT_HOST: aspire-pyramid-dev.funkysi1701.com          
 
   aspire_trekranks:
-    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.0.2
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.1.0
     container_name: monitoring_aspire_trekranks_dashboard
     expose:
       - "18886"
@@ -186,7 +186,7 @@ services:
         LETSENCRYPT_HOST: aspire-trekranks.funkysi1701.com     
 
   aspire_benchmarks:
-    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.0.2
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.1.0
     container_name: monitoring_aspire_benchmarks_dashboard
     expose:
       - "18885"
@@ -199,7 +199,7 @@ services:
         LETSENCRYPT_HOST: aspire-benchmarks.funkysi1701.com     
 
   aspire_pyramid_prod:
-    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.0.2
+    image: mcr.microsoft.com/dotnet/aspire-dashboard:8.1.0
     container_name: monitoring_aspire_pyramid_prod_dashboard
     expose:
       - "18884"
